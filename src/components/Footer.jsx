@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MapPin, Globe, Phone, Instagram } from 'lucide-react';
+import { Mail, MapPin, Phone, Instagram } from 'lucide-react';
 import generalData from '../data/general.json';
 
 const Footer = () => {
@@ -37,17 +37,6 @@ const Footer = () => {
                             </li>
                             <li style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
                                 <MapPin size={16} /> {generalData.contact.address}
-                            </li>
-                            <li>
-                                <a
-                                    href={`https://${generalData.social.web}`}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="hover:text-white"
-                                    style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}
-                                >
-                                    <Globe size={16} /> {generalData.social.web}
-                                </a>
                             </li>
                         </ul>
                     </div>

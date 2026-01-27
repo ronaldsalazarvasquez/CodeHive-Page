@@ -1,0 +1,62 @@
+[
+    {
+        "id": "ronald",
+        "name": "Ronald Salazar",
+        "role": "Fullstack Developer & Lead",
+        "description": "Líder técnico visionario con experiencia en arquitecturas escalables y soluciones innovadoras.",
+        "img": "Ronald.jpeg",
+        "social": {
+            "github": "https://github.com/ronaldsalazarvasquez",
+            "linkedin": "https://www.linkedin.com/in/ronald-salazar-vasquez-1a5553156/",
+            "twitter": "#"
+        }
+    },
+    {
+        "id": "lennin",
+        "name": "Lenin Ramirez Ucañay",
+        "role": "Backend Developer",
+        "description": "Experto en lógica de servidor, bases de datos y optimización de rendimiento.",
+        "img": "lennin.jpg",
+        "social": {
+            "github": "https://github.com/Leramzes",
+            "linkedin": "https://www.linkedin.com/in/lenin-ramirez-ucanay/",
+            "twitter": "#"
+        }
+    },
+    {
+        "id": "deyvi",
+        "name": "Deyvi Zelada",
+        "role": "Backend Developer",
+        "description": "Especialista en APIs robustas, seguridad y microservicios.",
+        "img": "Deyvi.png",
+        "social": {
+            "github": "https://github.com/ZelQui",
+            "linkedin": "https://www.linkedin.com/in/deyvizelada",
+            "twitter": "#"
+        }
+    },
+    {
+        "id": "yajaira",
+        "name": "Yajayra Huaman Chinguel",
+        "role": "Marketing & Redes Sociales",
+        "description": "Estratega digital encargada de conectar nuestras soluciones con el mundo.",
+        "img": "Yajayra.jpeg",
+        "social": {
+            "github": "https://github.com/YajayrahcH",
+            "linkedin": "https://www.linkedin.com/in/yajayra-anally-huaman-chinguel-4b00a32a8/",
+            "twitter": "#"
+        }
+    },
+    {
+        "id": "jose",
+        "name": "José Carlos Angeles Parra",
+        "role": "Investigador y Analista de Datos",
+        "description": "Experto en investigación profunda y análisis de datos para la toma de decisiones estratégicas.",
+        "img": "Jose.jpeg",
+        "social": {
+            "github": "",
+            "linkedin": "#",
+            "twitter": "#"
+        }
+    }
+]

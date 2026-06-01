@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Rocket } from 'lucide-react';
+import logo from '../assets/images/logo/icono.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -50,8 +51,8 @@ const Navbar = () => {
                     gap: '0.5rem',
                     textDecoration: 'none'
                 }}>
-                    <Rocket color="var(--color-primary)" />
-                    CodeHive
+                    <img src={logo} alt="Cod3Hive" style={{ width: '28px', height: '32px' }} />
+                    Cod3Hive
                 </Link>
 
                 {/* Desktop Menu */}

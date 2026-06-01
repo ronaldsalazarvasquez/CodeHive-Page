@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import VotaPE from './pages/VotaPE';
 import Projects from './pages/Projects';
 import Footer from './components/Footer';
+import Mascota from './components/Mascota';
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
         </Routes>
         <Footer />
       </div>
+      <Mascota />
     </Router>
+    
   );
 }
 

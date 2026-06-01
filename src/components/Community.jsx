@@ -16,7 +16,7 @@ const Community = () => {
                     textAlign: 'center',
                     border: '1px solid rgba(255,255,255,0.1)'
                 }}>
-                    <h2 className="heading-lg" style={{ marginBottom: '1.5rem' }}>Únete a la Comunidad CodeHive</h2>
+                    <h2 className="heading-lg" style={{ marginBottom: '1.5rem' }}>Únete a la Comunidad Cod3Hive</h2>
                     <p className="text-lead" style={{ maxWidth: '700px', margin: '0 auto 2.5rem' }}>
                         Si te gusta lo que hacemos, puedes ser parte del cambio. Únete a nuestra comunidad de desarrolladores o apóyanos para seguir creando herramientas gratuitas.
                     </p>

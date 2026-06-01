@@ -23,20 +23,16 @@ const Team = () => {
                 <div className="text-center mb-4">
                     <h2 className="heading-lg">Nuestro Equipo</h2>
                     <p className="text-lead">
-                        Las mentes creativas detrás del código.
+                        Las mentes creativas detrás de cada solución.
                     </p>
                 </div>
 
-                <div className="team-carousel" style={{
+                <div  style={{
                     display: 'flex',
-                    alignItems: 'stretch',
-                    overflowX: 'auto',
-                    gap: '2rem',
-                    padding: '1rem 0.5rem 2rem',
-                    scrollSnapType: 'x mandatory',
-                    WebkitOverflowScrolling: 'touch',
-                    scrollbarWidth: 'none',
-                    msOverflowStyle: 'none',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    gap: '1.5rem',
+                    padding: '1rem 0'
                 }}>
                     <style>{`
                         .team-carousel::-webkit-scrollbar { 
@@ -55,13 +51,9 @@ const Team = () => {
                                 style={{
                                     textAlign: 'center',
                                     padding: '1.5rem',
-                                    minWidth: '280px',
-                                    width: '280px',
-                                    flex: '0 0 280px',
-                                    scrollSnapAlign: 'start',
+                                    width: '270px',
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    height: '380px',
                                     transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                                     cursor: 'default',
                                     position: 'relative'

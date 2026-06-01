@@ -13,10 +13,10 @@
     },
     {
         "id": "lennin",
-        "name": "Lenin Ramirez Ucañay",
-        "role": "Backend Developer",
+        "name": "Lenin Ramirez",
+        "role": "Backend Developer & DB",
         "description": "Experto en lógica de servidor, bases de datos y optimización de rendimiento.",
-        "img": "lennin.jpg",
+        "img": "Lenin.jpeg",
         "social": {
             "github": "https://github.com/Leramzes",
             "linkedin": "https://www.linkedin.com/in/lenin-ramirez-ucanay/",
@@ -28,7 +28,7 @@
         "name": "Deyvi Zelada",
         "role": "Backend Developer",
         "description": "Especialista en APIs robustas, seguridad y microservicios.",
-        "img": "Deyvi.png",
+        "img": "Deyvi.jpeg",
         "social": {
             "github": "https://github.com/ZelQui",
             "linkedin": "https://www.linkedin.com/in/deyvizelada",
@@ -37,7 +37,7 @@
     },
     {
         "id": "yajaira",
-        "name": "Yajayra Huaman Chinguel",
+        "name": "Yajayra Huaman",
         "role": "Marketing & Redes Sociales",
         "description": "Estratega digital encargada de conectar nuestras soluciones con el mundo.",
         "img": "Yajayra.jpeg",
@@ -49,12 +49,24 @@
     },
     {
         "id": "jose",
-        "name": "José Carlos Angeles Parra",
-        "role": "Investigador y Analista de Datos",
+        "name": "José Angeles",
+        "role": "Investigador & Analista de Datos",
         "description": "Experto en investigación profunda y análisis de datos para la toma de decisiones estratégicas.",
-        "img": "Jose.jpeg",
+        "img": "Parra.jpeg",
         "social": {
             "github": "",
+            "linkedin": "#",
+            "twitter": "#"
+        }
+    },
+    {
+        "id": "dennis",
+        "name": "Denis Huamán",
+        "role": "Fronted Developer",
+        "description": "Encargado de construir la interfaz gráfica y la experiencia visual con la que interactúan los usuarios.",
+        "img": "",
+        "social": {
+            "github": "#",
             "linkedin": "#",
             "twitter": "#"
         }

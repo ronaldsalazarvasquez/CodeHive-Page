@@ -12,7 +12,7 @@ const Hero = () => {
             position: 'relative',
             background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url(${teamBg})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center 20%',
             backgroundAttachment: 'fixed',
             paddingTop: '80px'
         }}>
@@ -30,7 +30,7 @@ const Hero = () => {
                         color: 'var(--color-primary)'
                     }}>
                         <Rocket size={16} />
-                        <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>CodeHive Labs</span>
+                        <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>Cod3Hive Labs</span>
                     </div>
 
                     <h1 className="heading-xl">
@@ -39,7 +39,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-lead mb-4">
-                        CodeHive es un equipo de desarrolladores apasionados dedicados a crear soluciones web y móviles de alto rendimiento. Nuestra misión es resolver problemas reales de la sociedad y empresas privadas.
+                        Cod3Hive es un equipo de desarrolladores apasionados dedicados a crear soluciones web y móviles de alto rendimiento. Nuestra misión es resolver problemas reales de la sociedad y empresas privadas.
                     </p>
 
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

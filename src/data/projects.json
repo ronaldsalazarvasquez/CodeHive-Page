@@ -2,7 +2,8 @@
     {
         "id": "votape",
         "name": "VotaPE",
-        "description": "Plataforma de información política transparente para elecciones informadas.",
+        "image": "../src/assets/images/app_VotaPE/image.png",
+        "description": "Plataforma de información política transparente para elecciones informadas 2026.",
         "tags": [
             "React Native",
             "Node.js",
@@ -14,6 +15,7 @@
     {
         "id": "tooltrack",
         "name": "ToolTrack",
+        "image": "#",
         "description": "Plataforma integral para la gestión de herramientas y repuestos en talleres de mantenimiento. Implementa inventarios Just-in-Time y asegura trazabilidad completa de los activos.",
         "tags": [
             "React",
@@ -23,9 +25,11 @@
         "link": "#",
         "isInternal": false
     },
+    
     {
         "id": "iot-monitor",
         "name": "IoT Monitor Pro",
+        "image": "#",
         "description": "Sistema de monitoreo de sensores industriales en tiempo real para clientes privados.",
         "tags": [
             "IoT",

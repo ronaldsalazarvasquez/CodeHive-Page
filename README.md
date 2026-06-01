@@ -3,7 +3,7 @@
 Bienvenido al repositorio oficial de la Landing Page de **CodeHive**. 
 Somos un equipo de desarrolladores apasionados dedicados a crear soluciones web y móviles de alto rendimiento. Nuestra misión es resolver problemas reales de la sociedad y empresas privadas a través de experiencias digitales impactantes.
 
-![CodeHive Banner](public/og-image.jpeg)
+![CodeHive Banner](public/Team.jpeg)
 
 ## 🚀 Sobre el Proyecto
 

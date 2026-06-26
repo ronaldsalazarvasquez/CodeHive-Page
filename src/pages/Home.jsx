@@ -1,18 +1,16 @@
 import React from 'react';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Team from '../components/Team';
+import HeroScene from '../components/HeroScene';
+import AreaSection from '../components/Pillars';
 import Community from '../components/Community';
+import Talent from '../components/TalentSection';
 
 
 const Home = () => {
     return (
         <main>
-            <Hero />
-            <About />
-            <Team />
-            <Community />
-            
+            <HeroScene />
+            <AreaSection />
+            <Talent />
         </main>
     );
 };

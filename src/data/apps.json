@@ -1,0 +1,50 @@
+{
+  "votape": {
+    "name": "VotaPE",
+    "tag": "SISTEMA CRÍTICO",
+    "accentColor": "#F4B400",
+    "origin": {
+      "title": "¿Cómo nace VotaPE?",
+      "text1": "En un entorno donde la saturación de información confunde al electorado, identificamos una necesidad crítica: la falta de datos políticos fiables.",
+      "text2": "VotaPE nació en Cod3Hive para empoderar al ciudadano mediante tecnología limpia, auditada y de libre acceso.",
+      "videoSrc": "/videos/tu-video-presentacion.mp4" 
+    },
+    "hero": {
+      "title": "Descubre VotaPE",
+      "description": "La herramienta definitiva para la transparencia política. Accede a información veraz, compara candidatos y toma las mejores decisiones.",
+      "features": [
+        "Información Política Transparente",
+        "Comparación de Candidatos",
+        "Planes de Gobierno Detallados"
+      ]
+    },
+    "imagesFolder": "app_VotaPE", 
+    "testimonials": [
+      { "name": "Juan Alarcón", "role": "Estudiante", "video": "https://www.youtube.com/embed/dQw4w9WgXcQ", "code": "SRC_FEEDBACK_01" }
+    ]
+  },
+  "cix360": {
+    "name": "Cix360",
+    "tag": "PLATAFORMA EMPRESARIAL",
+    "accentColor": "#2196F3",
+    "origin": {
+      "title": "El Origen de Cix360",
+      "text1": "Las empresas locales necesitaban una herramienta centralizada para gestionar flujos de trabajo...",
+      "text2": "Desarrollamos Cix360 como una solución integral SaaS...",
+      "videoSrc": "/videos/cix360-presentation.mp4"
+    },
+    "hero": {
+      "title": "Potencia tu Empresa",
+      "description": "Sistema integral de gestión y optimización de flujos de trabajo corporativos.",
+      "features": [
+        "Gestión de Tareas",
+        "Reportes Analíticos",
+        "Integración CRM"
+      ]
+    },
+    "imagesFolder": "app_Cix360",
+    "testimonials": [
+      { "name": "Elena Ramos", "role": "Auditora", "video": "https://www.youtube.com/embed/dQw4w9WgXcQ", "code": "SRC_FEEDBACK_02" }
+    ]
+  }
+}

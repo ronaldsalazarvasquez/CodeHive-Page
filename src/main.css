@@ -1,0 +1,415 @@
+
+/*TODO DE GSAP*/
+/* Hero.css */
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap');*/
+@font-face {
+    font-family: 'MiFuentePersonalizada'; /* Nombre que le darás tú */
+    src: url('../src/assets/fonts/letraCod3hive.otf') format('truetype'); 
+    /* Cambia la ruta según donde hayas guardado tu archivo */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hero-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0; 
+    overflow: hidden; 
+    background: radial-gradient(circle at 60% 50%, #042A5C 0%, #021A3A 50%, #000000 100%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 45%; 
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none; 
+    z-index: 10;
+}
+
+.hero-overlay h1, 
+.hero-overlay h2, 
+.hero-overlay p,
+.cyber-btn {
+    pointer-events: auto; 
+    user-select: text;
+}
+
+.gsap-title, .gsap-slogan, .gsap-btn {
+    opacity: 0;
+    visibility: hidden; 
+    transform: translateY(30px);
+}
+
+.hero-overlay h1 {
+    font-size: 8rem;
+    font-family: 'MiFuentePersonalizada', sans-serif;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 1px;
+    background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 55%, #AAB4C0 80%, #7B8794 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(42, 76, 125, 0.5); 
+    line-height: 0.85;
+}
+.hero-overlay h2 {
+    font-size: 8rem;
+    font-weight: 900;
+    font-family: 'MiFuentePersonalizada', sans-serif;
+    margin: 0;
+    letter-spacing: 20px;
+    background: linear-gradient(to bottom, #5CCBFF 0%, #19A9FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(42, 76, 125, 0.5); 
+    line-height: 0.85;
+}
+.hero-overlay p {
+    font-size: 1.3rem;
+    font-family: 'MiFuentePersonalizada', sans-serif;
+    color: #C6CDD6;
+    margin-top: 15px;
+    letter-spacing: 4px;
+    font-weight: 700; 
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+.cyber-btn {
+    margin-top: 35px;
+    padding: 16px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #021A3A; 
+    background: #19A9FF;
+    border: 2px solid #19A9FF;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    box-shadow: 0 0 15px rgba(25, 169, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.cyber-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: -100%;
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.5s ease;
+}
+
+.cyber-btn:hover {
+    background: #0B8EE8;
+    border-color: #0B8EE8;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(11, 142, 232, 0.5);
+}
+.cyber-btn:hover::before {
+    left: 100%;
+}
+
+.cyber-btn:active {
+    transform: scale(0.95);
+}
+
+.vignette {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: inset 0 0 120px rgba(0,0,0,0.9);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-overlay { left: 40%; }
+    .hero-overlay h1 { font-size: 6rem; }
+    .hero-overlay h2 { font-size: 6rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-overlay {
+        left: 5%;
+        top: 65%;
+        text-align: center;
+        width: 90%;
+    }
+    .hero-overlay h1 { font-size: 4.5rem; }
+    .hero-overlay h2 { font-size: 4.5rem; }
+    .hero-overlay p { font-size: 0.9rem; letter-spacing: 2px; }
+    .cyber-btn { padding: 12px 30px; font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay { top: 58%; } 
+    .hero-overlay h1 { font-size: 3.5rem; }
+    .hero-overlay h2 { font-size: 3.5rem; letter-spacing: 1px; }
+    .hero-overlay p { font-size: 0.75rem; letter-spacing: 1px; }
+    .cyber-btn { padding: 10px 25px; font-size: 0.9rem; margin-top: 15px; }
+}
+
+
+
+/* CardsSection.css */
+
+.cards-section {
+    position: relative;
+    width: 100vw;
+    /* Quitamos el min-height: 100vh para que ocupe solo lo necesario */
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea las tarjetas hacia arriba en vez del centro */
+    padding: 20px 0 100px 0; /* Reducimos el espacio de arriba a 20px (antes era 100px) */
+    font-family: 'Montserrat', sans-serif;
+    z-index: 10;
+}
+
+/* Transición difuminada suave desde la sección anterior (Hero) */
+.fade-top {
+    position: absolute;
+    top: -300px; /* Sube mucho más para abarcar más área del Hero */
+    left: 0;
+    width: 100%;
+    height: 300px; /* Altura del difuminado mucho más grande */
+    
+    /* Gradiente con múltiples paradas para una transición súper suave */
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.2) 30%, 
+        rgba(0, 0, 0, 0.6) 65%, 
+        rgba(0, 0, 0, 0.9) 85%,
+        #000000 100%
+    );
+    
+    pointer-events: none; 
+    z-index: 15; /* Aseguramos que tape ligeramente los bordes sin bloquear clicks */
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+    z-index: 2; /* Por encima del difuminado */
+}
+
+.card {
+    position: relative;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    aspect-ratio: 3 / 4; /* Proporción vertical como en tu imagen */
+}
+
+/* EFECTO DE SOBRESALIR (HOVER) */
+.card:hover {
+    transform: translateY(-15px); /* Se eleva */
+    box-shadow: 0 20px 40px rgba(25, 169, 255, 0.25); /* Sombra con el azul de tu marca */
+}
+
+.card-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Zoom suave a la imagen al hacer hover */
+.card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente oscuro abajo para resaltar las letras blancas */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.card-content h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Responsive */
+@media (max-width: 1440px) {
+    .hero-overlay { 
+        left: 48%; /* Empujamos el texto un poco a la derecha para dar espacio al 3D */
+    }
+    .hero-overlay h1,
+    .hero-overlay h2 { 
+        font-size: 5.5rem; /* Reducimos el tamaño drásticamente de 8rem a 5.5rem */
+    }
+    .hero-overlay p {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+    .cyber-btn {
+        margin-top: 25px;
+        padding: 14px 35px;
+        font-size: 1rem;
+    }
+}
+
+/* 2. Laptops Pequeñas / Ultrabooks (De 1025px hasta 1200px) */
+@media (max-width: 1200px) {
+    .hero-overlay { 
+        left: 52%; /* Ajuste de posición */
+    }
+    .hero-overlay h1,
+    .hero-overlay h2 { 
+        font-size: 4.5rem; /* Ajuste proporcional para pantallas compactas */
+        letter-spacing: 8px;
+    }
+    .hero-overlay p {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+}
+
+/* 3. Tablets en Horizontal / Pantallas de baja resolución (Hasta 1024px) */
+@media (max-width: 1024px) {
+    .hero-overlay { 
+        left: 52%; 
+    }
+    .hero-overlay h1,
+    .hero-overlay h2 { 
+        font-size: 4rem; 
+        letter-spacing: 4px;
+    }
+}
+
+/* 4. Celulares Grandes y Tablets Verticales (Hasta 768px) */
+@media (max-width: 768px) {
+    .hero-overlay {
+        left: 50%;
+        top: 65%;
+        transform: translate(-50%, -50%); /* Centrado absoluto real en el eje X e Y */
+        text-align: center;
+        width: 90%;
+    }
+    .hero-overlay h1,
+    .hero-overlay h2 { 
+        font-size: 3.5rem; 
+        letter-spacing: 2px;
+        line-height: 0.9;
+    }
+    .hero-overlay p { 
+        font-size: 0.9rem; 
+        letter-spacing: 1px; 
+    }
+    .cyber-btn { 
+        padding: 12px 30px; 
+        font-size: 1rem; 
+    }
+}
+
+/* 5. Celulares Pequeños (Hasta 480px) */
+@media (max-width: 480px) {
+    .hero-overlay { 
+        top: 62%; 
+    } 
+    .hero-overlay h1,
+    .hero-overlay h2 { 
+        font-size: 2.8rem; 
+    }
+    .hero-overlay p { 
+        font-size: 0.75rem; 
+    }
+    .cyber-btn { 
+        padding: 10px 25px; 
+        font-size: 0.85rem; 
+        margin-top: 20px; 
+    }
+}
+
+/* Agrega esto a tu CardsSection.css */
+
+/* Contenedor que ocupa toda la sección para las partículas */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Muy importante para que no bloqueen los clicks en las tarjetas */
+    z-index: 1; /* Debajo de las tarjetas, encima del fondo negro */
+}
+
+/* Estilo de cada puntito */
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #F4B400; /* Mismo color dorado/naranja de tu Hero */
+    border-radius: 50%;
+    opacity: 0; /* Inician invisibles, GSAP las mostrará */
+    box-shadow: 0 0 8px #F4B400; /* Brillo alrededor del punto */
+    filter: blur(1px); /* Efecto difuminado suave */
+}
+
+/* Asegúrate de que las tarjetas tengan un z-index superior a las partículas */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+    z-index: 10; /* Actualizado para estar por encima de los puntos */
+}

@@ -1,7 +1,7 @@
 import React from 'react';
-import AppShowcase from '../components/AppShowcase';
+import AppShowcase from '../../components/AppCix360';
 
-const VotaPE = () => {
+const Cix360 = () => {
     return (
         <div style={{ paddingTop: '80px' }}>
             <AppShowcase />
@@ -9,4 +9,4 @@ const VotaPE = () => {
     );
 };
 
-export default VotaPE;
+export default Cix360;

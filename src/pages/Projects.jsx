@@ -1,112 +1,130 @@
-import React from 'react';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Github, ArrowRight, Terminal, Layers } from 'lucide-react';
+import gsap from 'gsap';
 import projectsData from '../data/projects.json';
-
-
-
+import '../assets/styles/Projects.css';
 
 const Projects = () => {
+    const containerRef = useRef(null);
+    const navigate = useNavigate();
+
+    // Paleta de colores de marca premium (Acentos de Neón Tecnológico)
     const getProjectColor = (index) => {
-            const colors = [
-                { banner: '#7F77DD', iconBg: '#EEEDFE', iconColor: '#534AB7', tagBg: '#EEEDFE', tagColor: '#534AB7' },
-                { banner: '#1D9E75', iconBg: '#E1F5EE', iconColor: '#0F6E56', tagBg: '#E1F5EE', tagColor: '#0F6E56' },
-                { banner: '#D85A30', iconBg: '#FAECE7', iconColor: '#993C1D', tagBg: '#FAECE7', tagColor: '#993C1D' },
-            ];
-            return colors[index % colors.length];
-        };
+        const colors = [
+            { banner: '#19A9FF', glow: 'rgba(25, 169, 255, 0.15)', tagBg: 'rgba(25, 169, 255, 0.08)', tagColor: '#5CCBFF' }, // Cyan
+            { banner: '#F4B400', glow: 'rgba(244, 180, 0, 0.15)', tagBg: 'rgba(244, 180, 0, 0.08)', tagColor: '#FFD54A' }, // Amarillo Abeja
+            { banner: '#00E5FF', glow: 'rgba(0, 229, 255, 0.15)', tagBg: 'rgba(0, 229, 255, 0.08)', tagColor: '#63F5FF' }, // Teal Eléctrico
+        ];
+        return colors[index % colors.length];
+    };
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            // Animación del título principal
+            gsap.fromTo('.ch-projects-title-block', 
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+            );
+
+            // Entrada fluida de las tarjetas en cascada cinematográfica (stagger)
+            gsap.fromTo('.ch-portfolio-card', 
+                { y: 40, opacity: 0, scale: 0.98 },
+                { y: 0, opacity: 1, scale: 1, duration: 0.7, stagger: 0.1, ease: "power2.out", delay: 0.2 }
+            );
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
 
     return (
-        <div style={{ paddingTop: '100px', paddingBottom: '4rem', minHeight: '100vh' }}>
-            <div className="container">
-                <div className="text-center" style={{ marginBottom: '5rem' }}>
-                    <h1 className="heading-xl">Nuestros Proyectos</h1>
-                    <p className="text-lead">
-                        Explora el portafolio completo de soluciones desarrolladas por Cod3Hive Labs.
-                    </p>
-                </div>
+        <>
+            <div className="ch-global-projects-view" ref={containerRef}>
+                <div className="ch-portfolio-container">
+                    
+                    {/* ENCABEZADO TIPO HUD CON MARCA DE ACENTO */}
+                    <div className="ch-projects-title-block">
+                        <h1>Nuestros Proyectos</h1>
+                        <p>Explora el ecosistema completo de aplicaciones e ingeniería digital de Cod3Hive Labs.</p>
+                    </div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-                    gap: '1.5rem',
-                    justifyContent: 'center',
-                }}>
-                    {projectsData.map((project, index) => {
-                        const c = getProjectColor(index);
-                        return (
-                            <div key={project.id} style={{
-                                background: 'var(--color-bg-card, rgba(255,255,255,0.05))',
-                                border: '1px solid rgba(255,255,255,0.08)',
-                                borderRadius: '16px',
-                                overflow: 'hidden',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                transition: 'transform 0.2s, border-color 0.2s',
-                            }}
-                            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
-                            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; }}
-                            >
-                                {/* Barra de color */}
-                                <div style={{ height: '6px', background: c.banner }} />
-
-                                <div style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                                    {/* Ícono */}
-                                    <div style={{
-                                        width: '40px', height: '40px', borderRadius: '10px',
-                                        background: c.iconBg, display: 'flex', alignItems: 'center',
-                                        justifyContent: 'center', marginBottom: '1rem',
-                                    }}>
-                                        <img
-                                            src={project.image}
-                                            alt={project.name}
+                    {/* CUADRÍCULA DE PORTAFOLIO GLOBAL */}
+                    <div className="ch-portfolio-grid">
+                        {projectsData.map((project, index) => {
+                            const c = getProjectColor(index);
+                            return (
+                                <div 
+                                    key={project.id} 
+                                    className="ch-portfolio-card"
+                                    style={{ 
+                                        '--p-banner': c.banner,
+                                        '--p-glow': c.glow,
+                                        '--p-tag-bg': c.tagBg,
+                                        '--p-tag-color': c.tagColor
+                                    }}
+                                >
+                                    {/* SECCIÓN SUPERIOR: VISUAL DE LA APP */}
+                                    <div className="ch-p-img-box">
+                                        <img 
+                                            src={project.image} 
+                                            alt={project.name} 
                                             onError={e => {
-                                                e.currentTarget.src = 'https://png.pngtree.com/png-clipart/20210314/original/pngtree-not-loaded-during-loading-png-image_6083139.jpg';
+                                                e.currentTarget.src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80';
                                             }}
-                                            style={{ width: '26px', height: '26px', objectFit: 'contain' }}
                                         />
+                                        <div className="ch-p-img-overlay"></div>
                                     </div>
 
-                                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-                                        {project.name}
-                                    </h3>
-                                    <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem', lineHeight: 1.6, flex: 1, marginBottom: '1rem' }}>
-                                        {project.description}
-                                    </p>
+                                    {/* CUERPO DE DATOS */}
+                                    <div className="ch-p-body">
+                                        <h3>{project.name}</h3>
+                                        <p>{project.description}</p>
 
-                                    {/* Tags */}
-                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.25rem' }}>
-                                        {project.tags.map((tag, i) => (
-                                            <span key={i} style={{
-                                                fontSize: '0.75rem', padding: '3px 10px',
-                                                background: c.tagBg, color: c.tagColor,
-                                                borderRadius: '99px', fontWeight: 600,
-                                            }}>
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
+                                        {/* TECNOLOGÍAS USADAS */}
+                                        <div className="ch-p-tags-wrapper">
+                                            {project.tags.map((tag, i) => (
+                                                <span key={i} className="ch-p-tag">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
 
-                                    {/* Footer */}
-                                    <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                        <span style={{ fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--color-text-muted)' }}>
-                                            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#1D9E75', display: 'inline-block' }} />
-                                            Activo
-                                        </span>
-                                        <a href={project.link} target={project.isInternal ? '_self' : '_blank'} rel="noreferrer"
-                                            style={{ fontSize: '0.875rem', fontWeight: 600, color: c.iconColor, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                            {project.isInternal ? 'Ver detalles' : 'Ver repo'}
-                                            {project.isInternal ? <ArrowRight size={14} /> : <Github size={14} />}
-                                        </a>
+                                        {/* ACCIONES Y ESTADO TRANSACCIONAL */}
+                                        <div className="ch-p-footer">
+                                            <div className="ch-status-indicator">
+                                                <span className="ch-status-dot"></span> Active Core
+                                            </div>
+                                            
+                                            {project.isInternal ? (
+                                                /* Si es interno, usamos el enrutador para enviarlo a su sub-pilar/app */
+                                                <button 
+                                                    onClick={() => navigate(project.link)}
+                                                    className="ch-p-action-link"
+                                                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                                                >
+                                                    Ver detalles <ArrowRight size={14} />
+                                                </button>
+                                            ) : (
+                                                /* Si es externo, abre una nueva pestaña normal */
+                                                <a 
+                                                    href={project.link} 
+                                                    target="_blank" 
+                                                    rel="noreferrer"
+                                                    className="ch-p-action-link"
+                                                >
+                                                    Ver repositorio <Github size={14} />
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
+
                 </div>
             </div>
-
-            
-        </div>
+        </>
     );
 };
 

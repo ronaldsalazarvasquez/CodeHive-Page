@@ -6,6 +6,7 @@ import logo from '../assets/images/logo/icono.png';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
@@ -16,10 +17,12 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // 🌟 Actualizado el nombre a 'El Enjambre' y la ruta correspondiente
     const navLinks = [
         { name: 'Inicio', path: '/' },
-        { name: 'VotaPE', path: '/votape' },
+        { name: 'Talento-HIVE', path: '/talento-hive' },
         { name: 'Proyectos', path: '/proyectos' },
+        { name: 'Blog Cod3Hive', path: '/#', isSpecial: true }, // 🌟 Bandera para identificar el botón premium
     ];
 
     // Check if link is active
@@ -56,20 +59,50 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="desktop-menu" style={{ display: 'none', gap: '2rem' }}>
+                <div className="desktop-menu" style={{ display: 'none', gap: '2rem', alignItems: 'center' }}>
                     {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.path}
-                            style={{
-                                color: isActive(link.path) ? 'var(--color-primary)' : 'var(--color-text-muted)',
-                                fontWeight: isActive(link.path) ? 600 : 400,
-                                transition: 'color 0.3s'
-                            }}
-                            className="hover:text-white"
-                        >
-                            {link.name}
-                        </Link>
+                        link.isSpecial ? (
+                            /* 🚀 BOTÓN ESPECIAL DESTACADO PARA EL BLOG (DESKTOP) */
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    backgroundColor: 'rgba(139, 92, 246, 0.12)',
+                                    color: '#a78bfa',
+                                    border: '1px solid rgba(139, 92, 246, 0.3)',
+                                    padding: '0.5rem 1.1rem',
+                                    borderRadius: '6px',
+                                    fontSize: '0.88rem',
+                                    fontWeight: 700,
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.5px',
+                                    textDecoration: 'none',
+                                    boxShadow: '0 0 15px rgba(139, 92, 246, 0.05)',
+                                    transition: 'all 0.3s ease'
+                                }}
+                                className="ch-nav-special-btn"
+                            >
+                                <Rocket size={14} className="ch-rocket-icon" />
+                                {link.name}
+                            </Link>
+                        ) : (
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                style={{
+                                    color: isActive(link.path) ? 'var(--color-primary)' : 'var(--color-text-muted)',
+                                    fontWeight: isActive(link.path) ? 600 : 400,
+                                    transition: 'color 0.3s',
+                                    textDecoration: 'none'
+                                }}
+                                className="hover:text-white"
+                            >
+                                {link.name}
+                            </Link>
+                        )
                     ))}
                 </div>
 
@@ -81,7 +114,7 @@ const Navbar = () => {
                         border: 'none',
                         color: 'white',
                         cursor: 'pointer',
-                        display: 'block' // Visible on mobile by default logic handling in CSS usually
+                        display: 'block'
                     }}
                     className="mobile-toggle"
                 >
@@ -104,18 +137,48 @@ const Navbar = () => {
                         alignItems: 'center'
                     }}>
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                to={link.path}
-                                onClick={() => setIsOpen(false)}
-                                style={{
-                                    color: isActive(link.path) ? 'var(--color-primary)' : 'white',
-                                    fontSize: '1.2rem',
-                                    fontWeight: 600
-                                }}
-                            >
-                                {link.name}
-                            </Link>
+                            link.isSpecial ? (
+                                /* 🚀 BOTÓN ESPECIAL DESTACADO PARA EL BLOG (MOBILE) */
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    onClick={() => setIsOpen(false)}
+                                    style={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        backgroundColor: 'rgba(139, 92, 246, 0.15)',
+                                        color: '#a78bfa',
+                                        border: '1px solid rgba(139, 92, 246, 0.4)',
+                                        padding: '0.7rem 2rem',
+                                        borderRadius: '8px',
+                                        fontSize: '1.1rem',
+                                        fontWeight: 700,
+                                        textTransform: 'uppercase',
+                                        width: '80%',
+                                        justifyContent: 'center',
+                                        textDecoration: 'none',
+                                        marginTop: '0.5rem'
+                                    }}
+                                >
+                                    <Rocket size={16} />
+                                    {link.name}
+                                </Link>
+                            ) : (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    onClick={() => setIsOpen(false)}
+                                    style={{
+                                        color: isActive(link.path) ? 'var(--color-primary)' : 'white',
+                                        fontSize: '1.2rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none'
+                                    }}
+                                >
+                                    {link.name}
+                                </Link>
+                            )
                         ))}
                     </div>
                 )}
@@ -124,6 +187,19 @@ const Navbar = () => {
                 @media (min-width: 768px) {
                     .desktop-menu { display: flex !important; }
                     .mobile-toggle { display: none !important; }
+                }
+                
+                /* Efecto Hover Premium para el botón del Enjambre */
+                .ch-nav-special-btn:hover {
+                    background-color: rgba(207, 229, 12, 0.25) !important;
+                    border-color: #dbd410 !important;
+                    color: #fff !important;
+                    box-shadow: 0 0 20px rgba(207, 229, 12, 0.25) !important; /* 🌟 Ajustado al nuevo tono amarillo */
+                    transform: translateY(-1px);
+                }
+                .ch-nav-special-btn:hover .ch-rocket-icon {
+                    transform: translateX(2px) translateY(-2px);
+                    transition: transform 0.3s ease;
                 }
             `}</style>
         </nav>

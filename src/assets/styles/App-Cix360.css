@@ -1,0 +1,422 @@
+.ch-showcase-view {
+    position: relative;
+    width: 100vw;
+    background-color: #050507;
+    padding: 90px 0 100px 0;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.ch-sc-radial-bg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(139, 92, 246, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ch-sc-origin-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 120px;
+    background: rgba(10, 10, 14, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    padding: 50px 40px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.ch-sc-origin-text h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    letter-spacing: -0.5px;
+}
+
+.ch-sc-origin-text p {
+    color: #C6CDD6;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.ch-sc-vertical-video-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.ch-sc-vertical-viewport {
+    width: 100%;
+    max-width: 270px;
+    aspect-ratio: 9 / 16;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(139, 92, 246, 0.1);
+}
+
+.ch-sc-hero-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+/* ==========================================
+                   💻📱 CONTENEDOR MAESTRO MULTI-DEVICE
+                   ========================================== */
+.ch-dual-device-workspace {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+/* --- LAPTOP FRAME RESPONSIVO --- */
+.ch-sc-laptop-screen-frame {
+    width: 100%;
+    position: relative;
+    background: #000;
+    border: 12px solid #1c1c1e;
+    border-bottom-width: 16px;
+    border-radius: 16px 14px 0 0;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+}
+
+.ch-sc-laptop-display {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    position: relative;
+    background: #050507;
+    overflow: hidden;
+}
+
+.ch-sc-laptop-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 45%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.ch-sc-laptop-base {
+    width: 114%;
+    height: 10px;
+    background: linear-gradient(to bottom, #2d2d30, #1e1e21);
+    position: absolute;
+    bottom: -26px;
+    /* Ajustado milimétricamente al borde del borde inferior del frame */
+    left: -7%;
+    border-radius: 0 0 12px 12px;
+    border-top: 1px solid #444;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Notch/Muesca de apertura central */
+.ch-sc-laptop-base::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #0d0d0f;
+    border-radius: 0 0 4px 4px;
+}
+
+/* --- IPHONE PRO FRAME FLOTANTE --- */
+.ch-sc-iphone-frame-floating {
+    position: absolute;
+    bottom: -35px;
+    right: -25px;
+    width: 32%;
+    /* Escala perfectamente en base al contenedor de la laptop */
+    min-width: 155px;
+    max-width: 190px;
+    aspect-ratio: 9 / 18.5;
+    background: #000;
+    border-radius: 28px;
+    z-index: 10;
+    border: 4.5px solid #2d2d30;
+    box-shadow: -20px 20px 45px rgba(0, 0, 0, 0.85), 0 0 40px rgba(139, 92, 246, 0.12);
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.ch-scope-cix360 .ch-sc-iphone-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+.ch-sc-iphone-island {
+    width: 32%;
+    height: 12px;
+    background: #000;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    z-index: 20;
+}
+
+.ch-sc-iphone-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    z-index: 15;
+    pointer-events: none;
+}
+
+/* Botones laterales físicos estilizados */
+.ch-sc-iphone-frame-floating::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 50px;
+    width: 2.5px;
+    height: 15px;
+    background: #444;
+}
+
+.ch-sc-iphone-frame-floating .vol-up {
+    position: absolute;
+    left: -6px;
+    top: 75px;
+    width: 2.5px;
+    height: 30px;
+    background: #444;
+    border-radius: 2px 0 0 2px;
+}
+
+.ch-sc-iphone-frame-floating .vol-down {
+    position: absolute;
+    left: -6px;
+    top: 112px;
+    width: 2.5px;
+    height: 30px;
+    background: #444;
+    border-radius: 2px 0 0 2px;
+}
+
+.ch-sc-iphone-frame-floating .power {
+    position: absolute;
+    right: -6px;
+    top: 85px;
+    width: 2.5px;
+    height: 45px;
+    background: #444;
+    border-radius: 0 2px 2px 0;
+}
+
+/* --- TESTIMONIOS --- */
+.ch-sc-testimonials-section {
+    position: relative;
+    margin-top: 40px;
+}
+
+.ch-sc-section-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #a78bfa;
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ch-sc-premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.ch-premium-testimonial-card {
+    background: #111114;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+
+.ch-premium-testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 20px rgba(139, 92, 246, 0.08);
+}
+
+.ch-sc-video-box-premium {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 20px;
+}
+
+.ch-sc-video-box-premium iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.ch-sc-video-hud-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: monospace;
+    pointer-events: none;
+    letter-spacing: 1px;
+}
+
+.ch-premium-user-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 15px;
+}
+
+.ch-premium-avatar {
+    width: 34px;
+    height: 34px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.ch-premium-user-info h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.ch-premium-user-info p {
+    font-size: 0.75rem;
+    color: #AAB4C0;
+    margin: 0;
+}
+
+/* ==========================================
+                   📱 BREAKPOINTS RESPONSIVOS (MEDIA QUERIES)
+                   ========================================== */
+@media (max-width: 1024px) {
+    .ch-sc-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .ch-sc-hero-layout ul style,
+    .ch-sc-hero-layout div style {
+        justify-content: center;
+    }
+
+    .ch-sc-hero-layout li {
+        justify-content: center;
+    }
+
+    .ch-dual-device-workspace {
+        max-width: 460px;
+        padding-right: 25px;
+    }
+
+    .ch-sc-iphone-frame-floating {
+        bottom: -25px;
+        right: -15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .ch-sc-origin-layout,
+    .ch-sc-premium-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .ch-sc-origin-layout {
+        padding: 35px 20px;
+        text-align: center;
+    }
+
+    .ch-sc-origin-text span {
+        justify-content: center;
+    }
+
+    .ch-sc-vertical-viewport {
+        max-width: 240px;
+    }
+
+    .ch-dual-device-workspace {
+        max-width: 340px;
+        padding-right: 15px;
+    }
+
+    .ch-sc-laptop-screen-frame {
+        border-width: 8px;
+        border-bottom-width: 12px;
+    }
+
+    .ch-sc-laptop-base {
+        bottom: -19px;
+        height: 7px;
+    }
+
+    .ch-sc-iphone-frame-floating {
+        min-width: 115px;
+        border-width: 3.5px;
+        bottom: -20px;
+        right: -10px;
+    }
+}

@@ -1,0 +1,508 @@
+.ch-talent-hero-section {
+    position: relative;
+    width: 100vw;
+    height: 75vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), #000000), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ch-talent-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.ch-talent-hero-content span {
+    color: #4475AD;
+}
+
+.ch-talent-hero-content p {
+    color: #dae8f5;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 20px auto 30px;
+}
+
+.ch-talent-play-btn {
+    background: rgba(68, 117, 173, 0.2);
+    border: 2px solid #4475AD;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(68, 117, 173, 0.5);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 6px;
+}
+
+.ch-talent-play-btn:hover {
+    background: #4475AD;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #4475AD;
+}
+
+/* MODAL OVERLAY STYLES */
+.ch-talent-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ch-talent-modal-wrapper {
+    position: relative;
+    width: 85%;
+    max-width: 850px;
+    aspect-ratio: 16/9;
+    background: #000000;
+    border: 2px solid #4475AD;
+    box-shadow: 0 0 30px rgba(68, 117, 173, 0.4);
+}
+
+.ch-talent-close-btn {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* SECCIÓN INTEGRANTES MEJORADA */
+.ch-talent-team-section {
+    padding: 100px 6%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ch-talent-sec-title {
+    color: #ffffff;
+    font-size: 2.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    border-left: 5px solid #ffaa00;
+    padding-left: 18px;
+    letter-spacing: 1px;
+}
+
+/* CAMBIO: Ahora son estrictamente 3 columnas en pantallas grandes */
+.ch-talent-team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.ch-talent-member-card {
+    background: #070c11;
+    border: 1px solid rgba(68, 117, 173, 0.12);
+    border-radius: 20px;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(68, 117, 173, 0.03);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ch-talent-member-card::before,
+.ch-talent-member-card::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    transition: all 0.3s ease;
+    opacity: 0.2;
+}
+
+.ch-talent-member-card::before {
+    top: 12px;
+    right: 12px;
+    border-top: 2px solid #ffaa00;
+    border-right: 2px solid #ffaa00;
+}
+
+.ch-talent-member-card::after {
+    bottom: 12px;
+    left: 12px;
+    border-bottom: 2px solid #ffaa00;
+    border-left: 2px solid #ffaa00;
+}
+
+.ch-talent-member-card:hover {
+    border-color: rgba(68, 117, 173, 0.5);
+    box-shadow: 0 15px 35px rgba(68, 117, 173, 0.15), inset 0 0 15px rgba(68, 117, 173, 0.05);
+    transform: translateY(-8px);
+}
+
+.ch-talent-member-card:hover::before,
+.ch-talent-member-card:hover::after {
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+}
+
+/* CAMBIO: Contenedor con Aspect Ratio Retrato (3:4 vertical) */
+.ch-talent-img-container {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    background-color: #020406;
+}
+
+.ch-talent-img-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(7, 12, 17, 0) 50%, rgba(7, 12, 17, 0.95) 100%);
+    transition: opacity 0.4s ease;
+}
+
+.ch-talent-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%) contrast(1.05);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ch-talent-member-card:hover .ch-talent-img-container img {
+    transform: scale(1.04);
+    filter: grayscale(0%) contrast(1);
+}
+
+.ch-talent-card-info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.ch-talent-card-info h3 {
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.ch-talent-role {
+    color: #4475AD;
+    margin: 0 0 16px 0;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.ch-talent-desc {
+    color: #8fa0b5;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+    min-height: 70px;
+}
+
+.ch-talent-social-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(68, 117, 173, 0.1);
+    padding-top: 20px;
+    margin-top: 5px;
+}
+
+.ch-talent-icon-link {
+    color: #a4b8cc;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(68, 117, 173, 0.04);
+    border: 1px solid rgba(68, 117, 173, 0.12);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ch-talent-icon-link svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.ch-talent-icon-link:hover {
+    color: #ffffff;
+    background: #4475AD;
+    border-color: #4475AD;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(68, 117, 173, 0.4);
+}
+
+/* FILOSOFÍA CORPORATIVA */
+.ch-talent-philosophy-block {
+    background: #040404;
+    padding: 110px 6%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ch-talent-phil-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.ch-talent-grid-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.ch-talent-val-card {
+    background: #090909;
+    padding: 40px 30px;
+    border-radius: 10px;
+    border-top: 4px solid #4475AD;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+}
+
+.ch-talent-val-card h4 {
+    color: #ffffff;
+    font-size: 1.35rem;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.ch-talent-val-card p {
+    color: #dae8f5;
+    line-height: 1.7;
+    margin: 0;
+    opacity: 0.85;
+    font-size: 0.98rem;
+}
+
+.ch-talent-mueve-box {
+    background: linear-gradient(145deg, #090909, #0f1721);
+    padding: 45px;
+    border-radius: 14px;
+    border: 1px solid rgba(68, 117, 173, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    opacity: 0;
+}
+
+.ch-talent-mueve-box p {
+    color: #dae8f5;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* SECCIÓN RECLUTAMIENTO */
+.ch-talent-join-section {
+    padding: 110px 6%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ch-talent-join-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.ch-talent-join-text h2 {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0 0 25px 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.ch-talent-join-text p {
+    color: #dae8f5;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.ch-talent-cv-box {
+    background: #080808;
+    border: 1px solid #141414;
+    padding: 45px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+}
+
+.ch-talent-cv-box h3 {
+    color: #ffaa00;
+    margin: 0 0 30px 0;
+    font-size: 1.45rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.ch-talent-form-group {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.ch-talent-form-group label {
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ch-talent-form-group input {
+    background: #121212;
+    border: 1px solid #222;
+    padding: 14px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+    font-size: 0.95rem;
+}
+
+.ch-talent-form-group input:focus {
+    border-color: #4475AD;
+}
+
+.ch-talent-file-label {
+    background: #161616;
+    border: 2px dashed #2c2c2c;
+    padding: 25px;
+    text-align: center;
+    color: #dae8f5;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.ch-talent-file-label:hover {
+    border-color: #4475AD;
+    color: white;
+    background: rgba(68, 117, 173, 0.04);
+}
+
+.ch-talent-submit-btn {
+    width: 100%;
+    background: #4475AD;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    margin-top: 12px;
+    box-shadow: 0 4px 15px rgba(68, 117, 173, 0.3);
+}
+
+.ch-talent-submit-btn:hover {
+    background: #365e8c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(68, 117, 173, 0.5);
+}
+
+/* === RESPONSIVE AJUSTADO PARA LAS REDES DE COLUMNAS === */
+@media (max-width: 1024px) {
+    .ch-talent-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 2 en tablets */
+    .ch-talent-join-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .ch-talent-hero-content h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ch-talent-team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 1 en móviles */
+    .ch-talent-hero-section {
+        height: 65vh;
+    }
+
+    .ch-talent-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .ch-talent-hero-content p {
+        font-size: 1rem;
+    }
+
+    .ch-talent-sec-title {
+        font-size: 1.9rem;
+    }
+
+    .ch-talent-join-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .ch-talent-cv-box {
+        padding: 30px 20px;
+    }
+
+    .ch-talent-mueve-box {
+        padding: 30px 20px;
+    }
+}

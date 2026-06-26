@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cod3Hive Labs - Hero</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050811;
+            color: #ffffff;
+        }
+
+        .hero-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            overflow: hidden;
+        }
+
+        .vignette {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 40%, rgba(5, 8, 17, 0.8) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .canvas-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* --- CONTENEDOR DEL SVG EXTERNO --- */
+        .ch-hero-svg-overlay {
+            position: relative;
+            width: 45%;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        /* El objeto que carga el SVG */
+        .ch-hero-boceto {
+            width: 100%;
+            height: 100%;
+            max-height: 550px;
+            pointer-events: none; /* Para que no interfiera con el mouse */
+            transition: filter 0.8s ease;
+        }
+
+        /* Efecto neón al completarse */
+        .logo-complete {
+            filter: drop-shadow(0 0 25px rgba(68, 117, 173, 0.6));
+        }
+
+        /* --- TEXTOS --- */
+        .hero-overlay {
+            position: relative;
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 3;
+        }
+
+        .gsap-title {
+            font-size: 5.5rem;
+            font-weight: 900;
+            line-height: 0.9;
+            opacity: 0;
+        }
+
+        .gsap-title:nth-child(2) {
+            color: #ffaa00;
+            margin-bottom: 20px;
+        }
+
+        .gsap-slogan {
+            font-size: 1rem;
+            letter-spacing: 5px;
+            color: #8a99ad;
+            margin-bottom: 40px;
+            font-weight: 600;
+            opacity: 0;
+        }
+
+        .gsap-btn {
+            opacity: 0;
+        }
+
+        .cyber-btn {
+            background: transparent;
+            border: 2px solid #ffaa00;
+            color: #ffaa00;
+            padding: 14px 28px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cyber-btn:hover {
+            background: #ffaa00;
+            color: #050811;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero-wrapper {
+                flex-direction: column-reverse;
+                justify-content: center;
+                padding: 40px 20px;
+                gap: 40px;
+            }
+            .ch-hero-svg-overlay, .hero-overlay { width: 100%; align-items: center; text-align: center; }
+            .ch-hero-svg-overlay { height: 40vh; }
+            .gsap-title { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-wrapper">
+        <div class="vignette"></div>
+        <div id="canvas-mount" class="canvas-container"></div>
+
+        <div class="ch-hero-svg-overlay">
+            <object id="abeja-object" class="ch-hero-boceto" data="AbejaLogo.svg" type="image/svg+xml"></object>
+        </div>
+
+        <div class="hero-overlay">
+            <h1 class="gsap-title">COD3</h1>
+            <h1 class="gsap-title">HIVE</h1>
+            <p class="gsap-slogan">CONSTRUYENDO EL MUNDO DIGITAL, BIT A BIT</p>
+            <div class="gsap-btn">
+                <button class="cyber-btn">CONOCER MÁS &#10142;</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // 1. FONDO THREE.JS (PARTÍCULAS)
+            const mount = document.getElementById('canvas-mount');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 0, window.innerWidth < 768 ? 16 : 10);
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            mount.appendChild(renderer.domElement);
+
+            const particlesGeometry = new THREE.BufferGeometry();
+            const posArray = new Float32Array(200 * 3);
+            for(let i=0; i<200*3; i++) posArray[i] = (Math.random() - 0.5) * 25;
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            
+            const particlesMesh = new THREE.Points(particlesGeometry, new THREE.PointsMaterial({ size: 0.06, color: 0xffaa00, transparent: true, opacity: 0.3 }));
+            scene.add(particlesMesh);
+
+            // 2. LÓGICA DEL EFECTO BOCETO PARA EL ARCHIVO SVG EXTERNO
+            const svgObject = document.getElementById('abeja-object');
+
+            // Esperamos a que el archivo externo cargue por completo
+            svgObject.addEventListener('load', () => {
+                // Accedemos al documento interno del SVG
+                const svgDoc = svgObject.contentDocument;
+                const paths = svgDoc.querySelectorAll('path');
+                
+                // Ocultamos y preparamos las líneas
+                paths.forEach((path) => {
+                    const length = path.getTotalLength ? path.getTotalLength() : 1000;
+                    path.style.strokeDasharray = length;
+                    path.style.strokeDashoffset = length;
+                    
+                    // Estilos del trazo láser inicial
+                    path.style.stroke = "#4475AD"; 
+                    path.style.strokeWidth = "25"; // Proporcional a lienzos grandes
+                    path.style.fill = "none";
+                    path.style.strokeLinecap = "round";
+                    path.style.strokeLinejoin = "round";
+                    path.style.transition = "fill-opacity 0.6s ease, stroke 0.6s ease";
+                    path.style.fillOpacity = "0"; 
+                });
+
+                // Línea de tiempo de animaciones GSAP
+                const masterTimeline = gsap.timeline();
+
+                // Paso A: Dibujar contornos
+                masterTimeline.to(paths, {
+                    strokeDashoffset: 0,
+                    duration: 2.2,
+                    stagger: 0.08,
+                    ease: "power1.inOut",
+                    delay: 0.3
+                });
+
+                // Paso B: Mostrar colores originales del SVG y quitar el stroke azul
+                masterTimeline.to(paths, {
+                    duration: 0.5,
+                    onStart: () => {
+                        paths.forEach((path) => {
+                            path.style.fillOpacity = "1"; 
+                            path.style.stroke = "none";    
+                        });
+                        svgObject.classList.add('logo-complete'); // Brillo exterior
+                    }
+                });
+
+                // Paso C: Animación de textos correlativa
+                masterTimeline.to(".gsap-title", { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power3.out" }, "-=0.1")
+                              .to(".gsap-slogan", { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "+=0.1") 
+                              .to(".gsap-btn", { opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.5)" }, "-=0.3");
+            });
+
+            // 3. MOUSE INTERACTION & RESIZE
+            let mouseX = 0, mouseY = 0;
+            window.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX / window.innerWidth) - 0.5;
+                mouseY = (e.clientY / window.innerHeight) - 0.5;
+            });
+
+            const clock = new THREE.Clock();
+            const animate = () => {
+                requestAnimationFrame(animate);
+                particlesMesh.rotation.y = clock.getElapsedTime() * 0.02 + (mouseX * 0.1);
+                particlesMesh.rotation.x = (mouseY * 0.1);
+                renderer.render(scene, camera);
+            };
+            animate();
+
+            window.addEventListener('resize', () => {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+            });
+        });
+    </script>
+</body>
+</html>

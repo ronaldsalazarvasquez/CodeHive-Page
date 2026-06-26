@@ -2,7 +2,7 @@
     {
         "id": "votape",
         "name": "VotaPE",
-        "image": "../src/assets/images/app_VotaPE/image.png",
+        "image": "../src/assets/images/projects/image.png",
         "description": "Plataforma de información política transparente para elecciones informadas 2026.",
         "tags": [
             "React Native",
@@ -23,20 +23,33 @@
             "Design System"
         ],
         "link": "#",
-        "isInternal": false
+        "isInternal": true
     },
-    
     {
-        "id": "iot-monitor",
-        "name": "IoT Monitor Pro",
+        "id": "cix360",
+        "name": "Cix360",
         "image": "#",
-        "description": "Sistema de monitoreo de sensores industriales en tiempo real para clientes privados.",
+        "description": "Aplicación hecha para la seguridad ciudadana de Chiclayo.",
         "tags": [
-            "IoT",
-            "Dashboard",
-            "Real-time"
+            "React",
+            "Vite",
+            "Real-time",
+            "Assistant AI"
+        ],
+        "link": "/cix360",
+        "isInternal": true
+    },
+    {
+        "id": "sideci",
+        "name": "SIDECI",
+        "image": "#",
+        "description": "----",
+        "tags": [
+            "React",
+            "Vite",
+            "Assistant AI"
         ],
         "link": "#",
-        "isInternal": false
+        "isInternal": true
     }
 ]

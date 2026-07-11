@@ -1,0 +1,260 @@
+.ch-login-screen {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ===== LEFT PANEL — BRANDING ===== */
+.ch-login-left {
+    position: relative;
+    flex: 0 0 42%;
+    background: rgba(13, 17, 23, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.75rem;
+    overflow: hidden;
+}
+
+.ch-login-left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.25), transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(13, 17, 23, 0.18), transparent 50%);
+    pointer-events: none;
+}
+
+.ch-login-watermark {
+    position: absolute;
+    width: 60%;
+    max-width: 420px;
+    right: -8%;
+    bottom: -10%;
+    opacity: 0.1;
+    transform: rotate(-8deg);
+    pointer-events: none;
+    filter: brightness(0) invert(1);
+}
+
+.ch-login-brand-card {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 3rem 3.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 1.75rem;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 25px 60px rgba(13, 17, 23, 0.25);
+}
+
+.ch-login-logo-badge {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(13, 17, 23, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.ch-login-logo-mark {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+}
+
+.ch-login-brand-text {
+    text-align: center;
+}
+
+.ch-login-brand-text h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 2px 20px rgba(13, 17, 23, 0.2);
+}
+
+.ch-login-brand-text span {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    background: linear-gradient(to bottom, #5CCBFF 0%, #19A9FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #19A9FF; /* Fallback for older browsers */
+}
+
+/* ===== RIGHT PANEL — FORM ===== */
+.ch-login-right {
+    flex: 1;
+    background-color: #ffffff;
+    color: #0d1117;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+}
+
+.ch-login-form-wrapper {
+    width: 100%;
+    max-width: 380px;
+}
+
+.ch-login-header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+}
+
+.ch-login-header-logo img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.ch-login-header-logo span {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #0d1117;
+}
+
+.ch-login-form-wrapper h2 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0 0 0.5rem 0;
+}
+
+.ch-login-form-wrapper > p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin: 0 0 2.25rem 0;
+}
+
+.ch-login-field {
+    margin-bottom: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ch-login-field label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #374151;
+    text-transform: uppercase;
+}
+
+.ch-login-input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ch-login-input-box svg {
+    position: absolute;
+    left: 14px;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.ch-login-input-box input {
+    width: 100%;
+    padding: 0.9rem 1rem 0.9rem 2.6rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #0d1117;
+    background: #f9fafb;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.ch-login-input-box input:focus {
+    border-color: #19A9FF;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(92, 203, 255, 0.18);
+}
+
+.ch-login-toggle-visibility {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    display: flex;
+    padding: 0;
+}
+
+.ch-login-toggle-visibility:hover {
+    color: #374151;
+}
+
+.ch-login-submit-btn {
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 0.95rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ch-login-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.ch-login-notice {
+    margin-top: 1.25rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    color: #0e7ec2;
+    background: rgba(92, 203, 255, 0.1);
+    border: 1px solid rgba(25, 169, 255, 0.25);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.ch-login-footer {
+    margin-top: 3rem;
+    font-size: 0.78rem;
+    color: #9ca3af;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .ch-login-left {
+        display: none;
+    }
+
+    .ch-login-right {
+        flex: 1 1 100%;
+    }
+}

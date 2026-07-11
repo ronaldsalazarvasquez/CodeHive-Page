@@ -537,7 +537,7 @@ const TalentPage = () => {
             )}
 
             {/* SECCIÓN 2: INTEGRANTES CORREGIDA */}
-            <section className="ch-talent-team-section">
+            <section id="nuestro-equipo" className="ch-talent-team-section">
                 <h2 className="ch-talent-sec-title">Mentes Detrás del Código</h2>
                 <div className="ch-talent-team-grid">
                     {teamData.map((member) => (
@@ -587,7 +587,7 @@ const TalentPage = () => {
             </section>
 
             {/* SECCIÓN 4 Y 5: VALORES Y QUÉ NOS MUEVE */}
-            <section className="ch-talent-philosophy-block">
+            <section id="sobre-nosotros" className="ch-talent-philosophy-block">
                 <div className="ch-talent-phil-wrapper">
                     <div>
                         <span className="ch-talent-values-eyebrow">// Filosofía Cod3Hive</span>

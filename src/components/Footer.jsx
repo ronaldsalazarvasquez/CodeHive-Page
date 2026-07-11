@@ -44,9 +44,10 @@ const Footer = () => {
                     <div>
                         <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', fontWeight: 600 }}>Enlaces</h4>
                         <ul style={{ color: 'var(--color-text-muted)', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                            <li><a href="/#about" className="hover:text-white">Sobre Nosotros</a></li>
-                            <li><a href="/#team" className="hover:text-white">Nuestro Equipo</a></li>
-                            <li><a href="/proyectos/votape" className="hover:text-white">Descargar VotaPE</a></li>
+                            <li><a href="/talento-hive#sobre-nosotros" className="hover:text-white">Sobre Nosotros</a></li>
+                            <li><a href="/talento-hive#nuestro-equipo" className="hover:text-white">Nuestro Equipo</a></li>
+                            <li><a href="/proyectos" className="hover:text-white">Proyectos</a></li>
+                            <li><a href="/intranet" className="hover:text-white">Intranet</a></li>
                         </ul>
                     </div>
 

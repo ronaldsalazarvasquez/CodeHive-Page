@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Rocket, Users, ShieldCheck } from 'lucide-react';
 
 // Importamos tu archivo JSON
 import teamData from '../data/team.json'; 
@@ -8,7 +9,7 @@ import teamData from '../data/team.json';
 import '../assets/styles/Talent.css';
 
 // Mapeo dinámico de todas las imágenes en assets
-const imagesGlob = import.meta.glob('../assets/images/team/*.{png,jpg,jpeg,svg,PNG,JPG,JPEG,SVG}', { eager: true });
+const imagesGlob = import.meta.glob('../assets/images/team/*.{png,jpg,jpeg,svg,webp,PNG,JPG,JPEG,SVG,WEBP}', { eager: true });
 
 // Imagen por defecto de Unsplash en caso de que falle la carga
 const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=400&h=400&fit=crop&q=80";
@@ -20,9 +21,9 @@ const TalentPage = () => {
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
     const companyValuesData = [
-        { title: "Innovación Radical", desc: "No seguimos tendencias, creamos las bases del mañana digital." },
-        { title: "Mente de Enjambre", desc: "Colaboración absoluta. El poder del grupo supera cualquier individualidad." },
-        { title: "Seguridad Nativa", desc: "Cada línea de código nace blindada contra amenazas futuras." }
+        { title: "Innovación Radical", desc: "No seguimos tendencias, creamos las bases del mañana digital.", icon: Rocket, accent: "#4475AD" },
+        { title: "Mente de Enjambre", desc: "Colaboración absoluta. El poder del grupo supera cualquier individualidad.", icon: Users, accent: "#ffaa00" },
+        { title: "Seguridad Nativa", desc: "Cada línea de código nace blindada contra amenazas futuras.", icon: ShieldCheck, accent: "#8b5cf6" }
     ];
 
     useEffect(() => {
@@ -364,21 +365,68 @@ const TalentPage = () => {
                     flex-direction: column;
                     gap: 90px;
                 }
+                .ch-talent-values-eyebrow {
+                    font-size: 0.7rem;
+                    font-weight: 800;
+                    letter-spacing: 2px;
+                    color: #ffaa00;
+                    text-transform: uppercase;
+                    font-family: monospace;
+                    margin: 0 0 12px 18px;
+                    display: block;
+                }
                 .ch-talent-grid-values {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                     gap: 30px;
                 }
                 .ch-talent-val-card {
-                    background: #090909;
+                    background: linear-gradient(160deg, #0b0b0d 0%, #060607 100%);
                     padding: 40px 30px;
-                    border-radius: 10px;
-                    border-top: 4px solid #4475AD;
-                    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                    border-radius: 14px;
+                    border: 1px solid rgba(255, 255, 255, 0.04);
+                    border-top: 3px solid var(--v-accent, #4475AD);
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
                     opacity: 0;
+                    position: relative;
+                    overflow: hidden;
+                    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.3s ease;
                 }
-                .ch-talent-val-card h4 { color: #ffffff; font-size: 1.35rem; margin: 0 0 15px 0; font-weight: 700; }
-                .ch-talent-val-card p { color: #dae8f5; line-height: 1.7; margin: 0; opacity: 0.85; font-size: 0.98rem; }
+                .ch-talent-val-card:hover {
+                    transform: translateY(-8px);
+                    border-color: rgba(255, 255, 255, 0.1);
+                    box-shadow: 0 25px 50px rgba(0,0,0,0.6), 0 0 30px color-mix(in srgb, var(--v-accent, #4475AD) 25%, transparent);
+                }
+                .ch-talent-val-index {
+                    position: absolute;
+                    top: 10px;
+                    right: 20px;
+                    font-size: 4rem;
+                    font-weight: 900;
+                    font-family: monospace;
+                    color: #ffffff;
+                    opacity: 0.04;
+                    line-height: 1;
+                    pointer-events: none;
+                    transition: opacity 0.4s ease;
+                }
+                .ch-talent-val-card:hover .ch-talent-val-index { opacity: 0.08; }
+                .ch-talent-val-icon-badge {
+                    width: 54px;
+                    height: 54px;
+                    border-radius: 14px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 22px;
+                    background: color-mix(in srgb, var(--v-accent, #4475AD) 14%, transparent);
+                    border: 1px solid color-mix(in srgb, var(--v-accent, #4475AD) 35%, transparent);
+                    color: var(--v-accent, #4475AD);
+                    transition: transform 0.3s ease;
+                }
+                .ch-talent-val-card:hover .ch-talent-val-icon-badge { transform: scale(1.08) rotate(-4deg); }
+                .ch-talent-val-card h4 { color: #ffffff; font-size: 1.35rem; margin: 0 0 15px 0; font-weight: 700; position: relative; }
+                .ch-talent-val-card p { color: #dae8f5; line-height: 1.7; margin: 0; opacity: 0.85; font-size: 0.98rem; position: relative; }
                 
                 .ch-talent-mueve-box {
                     background: linear-gradient(145deg, #090909, #0f1721);
@@ -542,14 +590,22 @@ const TalentPage = () => {
             <section className="ch-talent-philosophy-block">
                 <div className="ch-talent-phil-wrapper">
                     <div>
+                        <span className="ch-talent-values-eyebrow">// Filosofía Cod3Hive</span>
                         <h2 className="ch-talent-sec-title">Nuestros Valores</h2>
                         <div className="ch-talent-grid-values">
-                            {companyValuesData.map((v, i) => (
-                                <div key={i} className="ch-talent-val-card">
-                                    <h4>{v.title}</h4>
-                                    <p>{v.desc}</p>
-                                </div>
-                            ))}
+                            {companyValuesData.map((v, i) => {
+                                const Icon = v.icon;
+                                return (
+                                    <div key={i} className="ch-talent-val-card" style={{ '--v-accent': v.accent }}>
+                                        <span className="ch-talent-val-index">{String(i + 1).padStart(2, '0')}</span>
+                                        <div className="ch-talent-val-icon-badge">
+                                            <Icon size={24} />
+                                        </div>
+                                        <h4>{v.title}</h4>
+                                        <p>{v.desc}</p>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
 

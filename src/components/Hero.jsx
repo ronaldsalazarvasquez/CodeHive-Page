@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Download, Rocket, ArrowRight } from 'lucide-react';
-import teamBg from '../assets/images/team/Team.jpeg';
+import teamBg from '../assets/images/team/Team.webp';
 
 const Hero = () => {
     return (
@@ -43,7 +43,7 @@ const Hero = () => {
                     </p>
 
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <Link to="/votape" className="btn btn-primary">
+                        <Link to="/proyectos/votape" className="btn btn-primary">
                             <Rocket size={20} />
                             Conoce VotaPE
                         </Link>

@@ -196,7 +196,7 @@ const PilarDetailPage = () => {
                                 className="ch-catalog-card"
                                 style={{ '--card-accent': app.accent }}
                                 // 👇 MODIFICADO: Genera dinámicamente la ruta a la ventana interna de la aplicación
-                                onClick={() => navigate(`/${app.appId}`)} 
+                                onClick={() => navigate(`/proyectos/${app.appId}`)}
                             >
                                 <div className="ch-card-img-box">
                                     <img src={new URL(app.image, import.meta.url).href} alt={app.name} />

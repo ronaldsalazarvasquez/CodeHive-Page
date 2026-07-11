@@ -39,11 +39,11 @@
     z-index: 10;
 }
 
-.hero-overlay h1, 
-.hero-overlay h2, 
-.hero-overlay p,
+.hero-overlay h1,
+.hero-overlay h2,
+.hero-slogan-bottom,
 .cyber-btn {
-    pointer-events: auto; 
+    pointer-events: auto;
     user-select: text;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .hero-overlay h1 {
-    font-size: 8rem;
+    font-size: 8.8rem;
     font-family: 'MiFuentePersonalizada', sans-serif;
     font-weight: 900;
     margin: 0;
@@ -67,7 +67,7 @@
     line-height: 0.85;
 }
 .hero-overlay h2 {
-    font-size: 8rem;
+    font-size: 8.8rem;
     font-weight: 900;
     font-family: 'MiFuentePersonalizada', sans-serif;
     margin: 0;
@@ -79,15 +79,23 @@
     text-shadow: 0 0 25px rgba(42, 76, 125, 0.5); 
     line-height: 0.85;
 }
-.hero-overlay p {
-    font-size: 1.3rem;
-    font-family: 'MiFuentePersonalizada', sans-serif;
+.hero-slogan-bottom {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    font-family: 'Montserrat', sans-serif;
     color: #C6CDD6;
-    margin-top: 15px;
-    letter-spacing: 4px;
-    font-weight: 700; 
-    opacity: 0.9;
+    margin: 0;
+    letter-spacing: 3px;
+    font-weight: 600;
+    opacity: 0.8;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
     text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 10;
 }
 
 .cyber-btn {
@@ -96,15 +104,15 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #021A3A; 
-    background: #19A9FF;
-    border: 2px solid #19A9FF;
+    color: #241804;
+    background: #C6CDD6;
+    border: 2px solid #C6CDD6;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 3px;
-    box-shadow: 0 0 15px rgba(25, 169, 255, 0.4);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
     position: relative;
     overflow: hidden;
     display: inline-block;
@@ -122,10 +130,10 @@
 }
 
 .cyber-btn:hover {
-    background: #0B8EE8;
-    border-color: #0B8EE8;
+    background: #19A9FF;
+    border-color: #19A9FF;
     color: #ffffff;
-    box-shadow: 0 6px 20px rgba(11, 142, 232, 0.5);
+    box-shadow: 0 6px 20px rgba(217, 119, 6, 0.5);
 }
 .cyber-btn:hover::before {
     left: 100%;
@@ -146,8 +154,8 @@
 /* Responsive */
 @media (max-width: 1024px) {
     .hero-overlay { left: 40%; }
-    .hero-overlay h1 { font-size: 6rem; }
-    .hero-overlay h2 { font-size: 6rem; }
+    .hero-overlay h1 { font-size: 6.6rem; }
+    .hero-overlay h2 { font-size: 6.6rem; }
 }
 
 @media (max-width: 768px) {
@@ -157,17 +165,17 @@
         text-align: center;
         width: 90%;
     }
-    .hero-overlay h1 { font-size: 4.5rem; }
-    .hero-overlay h2 { font-size: 4.5rem; }
-    .hero-overlay p { font-size: 0.9rem; letter-spacing: 2px; }
+    .hero-overlay h1 { font-size: 5rem; }
+    .hero-overlay h2 { font-size: 5rem; }
+    .hero-slogan-bottom { font-size: 0.65rem; letter-spacing: 2px; bottom: 7%; }
     .cyber-btn { padding: 12px 30px; font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
-    .hero-overlay { top: 58%; } 
-    .hero-overlay h1 { font-size: 3.5rem; }
-    .hero-overlay h2 { font-size: 3.5rem; letter-spacing: 1px; }
-    .hero-overlay p { font-size: 0.75rem; letter-spacing: 1px; }
+    .hero-overlay { top: 58%; }
+    .hero-overlay h1 { font-size: 3.9rem; }
+    .hero-overlay h2 { font-size: 3.9rem; letter-spacing: 1px; }
+    .hero-slogan-bottom { font-size: 0.6rem; letter-spacing: 1px; bottom: 5%; white-space: normal; padding: 0 10%; }
     .cyber-btn { padding: 10px 25px; font-size: 0.9rem; margin-top: 15px; }
 }
 
@@ -291,11 +299,11 @@
         left: 48%; /* Empujamos el texto un poco a la derecha para dar espacio al 3D */
     }
     .hero-overlay h1,
-    .hero-overlay h2 { 
-        font-size: 5.5rem; /* Reducimos el tamaño drásticamente de 8rem a 5.5rem */
+    .hero-overlay h2 {
+        font-size: 6rem;
     }
-    .hero-overlay p {
-        font-size: 1.1rem;
+    .hero-slogan-bottom {
+        font-size: 0.65rem;
         letter-spacing: 3px;
     }
     .cyber-btn {
@@ -311,12 +319,12 @@
         left: 52%; /* Ajuste de posición */
     }
     .hero-overlay h1,
-    .hero-overlay h2 { 
-        font-size: 4.5rem; /* Ajuste proporcional para pantallas compactas */
+    .hero-overlay h2 {
+        font-size: 5rem;
         letter-spacing: 8px;
     }
-    .hero-overlay p {
-        font-size: 1rem;
+    .hero-slogan-bottom {
+        font-size: 0.65rem;
         letter-spacing: 2px;
     }
 }
@@ -327,8 +335,8 @@
         left: 52%; 
     }
     .hero-overlay h1,
-    .hero-overlay h2 { 
-        font-size: 4rem; 
+    .hero-overlay h2 {
+        font-size: 4.4rem;
         letter-spacing: 4px;
     }
 }
@@ -343,32 +351,36 @@
         width: 90%;
     }
     .hero-overlay h1,
-    .hero-overlay h2 { 
-        font-size: 3.5rem; 
+    .hero-overlay h2 {
+        font-size: 3.9rem;
         letter-spacing: 2px;
         line-height: 0.9;
     }
-    .hero-overlay p { 
-        font-size: 0.9rem; 
-        letter-spacing: 1px; 
+    .hero-slogan-bottom {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        bottom: 6%;
     }
-    .cyber-btn { 
-        padding: 12px 30px; 
-        font-size: 1rem; 
+    .cyber-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
     }
 }
 
 /* 5. Celulares Pequeños (Hasta 480px) */
 @media (max-width: 480px) {
-    .hero-overlay { 
-        top: 62%; 
-    } 
-    .hero-overlay h1,
-    .hero-overlay h2 { 
-        font-size: 2.8rem; 
+    .hero-overlay {
+        top: 62%;
     }
-    .hero-overlay p { 
-        font-size: 0.75rem; 
+    .hero-overlay h1,
+    .hero-overlay h2 {
+        font-size: 3.1rem;
+    }
+    .hero-slogan-bottom {
+        font-size: 0.6rem;
+        bottom: 5%;
+        white-space: normal;
+        padding: 0 10%;
     }
     .cyber-btn { 
         padding: 10px 25px; 

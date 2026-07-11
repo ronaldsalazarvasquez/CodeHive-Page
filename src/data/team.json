@@ -4,7 +4,7 @@
         "name": "Ronald Salazar",
         "role": "Fullstack Developer & Lead",
         "description": "Líder técnico visionario con experiencia en arquitecturas escalables y soluciones innovadoras.",
-        "img": "Ronald.jpeg",
+        "img": "Ronald.webp",
         "social": {
             "github": "https://github.com/ronaldsalazarvasquez",
             "linkedin": "https://www.linkedin.com/in/ronald-salazar-vasquez-1a5553156/",
@@ -16,8 +16,8 @@
         "id": "lennin",
         "name": "Lenin Ramirez",
         "role": "Backend Developer & DB",
-        "description": "Experto en lógica de servidor, bases de datos y optimización de rendimiento.",
-        "img": "Lenin.jpeg",
+        "description": "Experto en administración de bases de datos, lógica de servidores y programación backend.",
+        "img": "Lenin.webp",
         "social": {
             "github": "https://github.com/Leramzes",
             "linkedin": "https://www.linkedin.com/in/lenin-ramirez-ucanay/",
@@ -28,9 +28,9 @@
     {
         "id": "deyvi",
         "name": "Deyvi Zelada",
-        "role": "Backend Developer",
-        "description": "Especialista en APIs robustas, seguridad y microservicios.",
-        "img": "Deyvi.jpeg",
+        "role": "Backend Developer & Especialista en IA",
+        "description": "Especialista en APIs robustas, seguridad y microservicios, con foco en integrar inteligencia artificial a nuestras soluciones.",
+        "img": "Deyvi.webp",
         "social": {
             "github": "https://github.com/ZelQui",
             "linkedin": "https://www.linkedin.com/in/deyvizelada",
@@ -43,7 +43,7 @@
         "name": "Yajayra Huaman",
         "role": "Marketing & Redes Sociales",
         "description": "Estratega digital encargada de conectar nuestras soluciones con el mundo.",
-        "img": "Yajayra.jpeg",
+        "img": "Yajayra.webp",
         "social": {
             "github": "https://github.com/YajayrahcH",
             "linkedin": "https://www.linkedin.com/in/yajayra-anally-huaman-chinguel-4b00a32a8/",
@@ -56,7 +56,7 @@
         "name": "José Angeles",
         "role": "Investigador & Analista de Datos",
         "description": "Experto en investigación profunda y análisis de datos para la toma de decisiones estratégicas.",
-        "img": "Parra.jpeg",
+        "img": "Parra.webp",
         "social": {
             "github": "",
             "linkedin": "https://www.linkedin.com/in/j-carlos-angeles-p-7a13203b3/",
@@ -69,7 +69,7 @@
         "name": "Denis Huamán",
         "role": "Fronted Developer",
         "description": "Encargado de construir la interfaz gráfica y la experiencia visual con la que interactúan los usuarios.",
-        "img": "Dennis.jpg",
+        "img": "Dennis.webp",
         "social": {
             "github": "https://github.com/Deeenis29",
             "linkedin": "#",
@@ -80,8 +80,8 @@
     {
         "id": "lenin",
         "name": "Lenin Castañeda",
-        "role": "Video Editor",
-        "description": "----.",
+        "role": "Video Editor & Comentarista",
+        "description": "Da forma audiovisual a nuestras historias mediante edición de video, y pone la voz como comentarista en nuestros contenidos y transmisiones.",
         "img": "",
         "social": {
             "github": "#",
@@ -93,8 +93,8 @@
     {
         "id": "heydi",
         "name": "Heidy Tenorio",
-        "role": "--",
-        "description": "----.",
+        "role": "Innovación Digital & Marketing",
+        "description": "Experta en innovación digital y estrategias de marketing, impulsando el crecimiento y la presencia de nuestras soluciones en el mercado.",
         "img": "",
         "social": {
             "github": "#",

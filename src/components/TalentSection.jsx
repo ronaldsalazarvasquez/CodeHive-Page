@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import TalentImg from '../assets/images/team/TalentImg.png';
+import TalentImg from '../assets/images/team/TalentImg.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -229,10 +229,11 @@ const TalentSection = () => {
 
                     <div className="talent-image-box">
                         <div className="image-decoration"></div>
-                        <img 
+                        <img
                             src={TalentImg}
-                            alt="Talento COD3HIVE" 
-                            className="representative-img" 
+                            alt="Talento COD3HIVE"
+                            className="representative-img"
+                            loading="lazy"
                         />
                     </div>
                 </div>

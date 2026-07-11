@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 // Importas tu imagen PNG
-import BeePNG from '../assets/images/logo/icono.png'; 
+import BeePNG from '../assets/images/logo/icono.webp';
 
 const Hero = () => {
     const containerRef = useRef(null); 
@@ -209,8 +209,7 @@ const Hero = () => {
             <div className="hero-overlay">
                 <h1 className="gsap-title">COD3</h1>
                 <h2 className="gsap-title">HIVE</h2>
-                <p className="gsap-slogan">CONSTRUYENDO EL MUNDO DIGITAL, BIT A BIT</p>
-                
+
                 <div className="gsap-btn">
                     <button 
                         className="cyber-btn" 
@@ -235,6 +234,8 @@ const Hero = () => {
                     </button>
                 </div>
             </div>
+
+            <p className="hero-slogan-bottom gsap-slogan">CONSTRUYENDO EL MUNDO DIGITAL, BIT A BIT</p>
         </section>
     );
 };

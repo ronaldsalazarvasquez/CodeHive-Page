@@ -7,7 +7,7 @@ import '../assets/styles/App-VotaPE.css';
 gsap.registerPlugin(ScrollTrigger);
 
 // Dynamically import all images
-const imagesGlob = import.meta.glob('../assets/images/app_VotaPE/*.{png,jpg,jpeg}', { eager: true });
+const imagesGlob = import.meta.glob('../assets/images/app_VotaPE/*.{png,jpg,jpeg,webp}', { eager: true });
 const allImages = Object.values(imagesGlob).map((mod) => mod.default);
 
 const AppShowcase = () => {
@@ -177,6 +177,7 @@ const AppShowcase = () => {
                                             src={img}
                                             alt={`VotaPE Screen ${index + 1}`}
                                             className="ch-sc-carousel-img"
+                                            loading="lazy"
                                             style={{ opacity: currentIndex === index ? 1 : 0 }}
                                         />
                                     ))}

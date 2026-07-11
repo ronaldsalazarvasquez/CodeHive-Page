@@ -46,7 +46,7 @@ const Footer = () => {
                         <ul style={{ color: 'var(--color-text-muted)', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                             <li><a href="/#about" className="hover:text-white">Sobre Nosotros</a></li>
                             <li><a href="/#team" className="hover:text-white">Nuestro Equipo</a></li>
-                            <li><a href="/votape" className="hover:text-white">Descargar VotaPE</a></li>
+                            <li><a href="/proyectos/votape" className="hover:text-white">Descargar VotaPE</a></li>
                         </ul>
                     </div>
 

@@ -3,7 +3,7 @@ import { Github, Twitter, Linkedin } from 'lucide-react';
 import teamData from '../data/team.json';
 
 // Dynamically import all team images from assets
-const imagesGlob = import.meta.glob('../assets/images/team/*.{png,jpg,jpeg,svg}', { eager: true });
+const imagesGlob = import.meta.glob('../assets/images/team/*.{png,jpg,jpeg,svg,webp}', { eager: true });
 
 const getTeamImage = (imageName) => {
     if (!imageName) return null;
@@ -81,6 +81,7 @@ const Team = () => {
                                     <img
                                         src={imgSrc}
                                         alt={member.name}
+                                        loading="lazy"
                                         style={{
                                             width: '100%',
                                             height: '100%',

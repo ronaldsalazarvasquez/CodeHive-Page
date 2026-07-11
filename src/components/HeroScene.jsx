@@ -235,7 +235,6 @@ const Hero = () => {
                 </div>
             </div>
 
-            <p className="hero-slogan-bottom gsap-slogan">CONSTRUYENDO EL MUNDO DIGITAL, BIT A BIT</p>
         </section>
     );
 };

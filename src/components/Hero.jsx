@@ -30,7 +30,7 @@ const Hero = () => {
                         color: 'var(--color-primary)'
                     }}>
                         <Rocket size={16} />
-                        <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>Cod3Hive Labs</span>
+                        <span style={{ fontSize: '0.875rem', fontWeight: 600 }}>Beez Core Labs</span>
                     </div>
 
                     <h1 className="heading-xl">
@@ -39,7 +39,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-lead mb-4">
-                        Cod3Hive es un equipo de desarrolladores apasionados dedicados a crear soluciones web y móviles de alto rendimiento. Nuestra misión es resolver problemas reales de la sociedad y empresas privadas.
+                        Beez Core es un equipo de desarrolladores apasionados dedicados a crear soluciones web y móviles de alto rendimiento. Nuestra misión es resolver problemas reales de la sociedad y empresas privadas.
                     </p>
 
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

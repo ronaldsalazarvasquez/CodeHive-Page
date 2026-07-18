@@ -14,9 +14,9 @@ const Login = () => {
     return (
         <div className="ch-login-screen">
             <div className="ch-login-left">
-                <img src={logo} alt="Cod3Hive" className="ch-login-logo-mark" />
+                <img src={logo} alt="Beez Core" className="ch-login-logo-mark" />
                 <div className="ch-login-brand-text">
-                    <h1>COD3 HIVE</h1>
+                    <h1>BEEZ CORE</h1>
                     <span>LABS</span>
                 </div>
             </div>
@@ -24,8 +24,8 @@ const Login = () => {
             <div className="ch-login-right">
                 <div className="ch-login-form-wrapper">
                     <div className="ch-login-header-logo">
-                        <img src={logo} alt="Cod3Hive" />
-                        <span>COD3 HIVE LABS</span>
+                        <img src={logo} alt="Beez Core" />
+                        <span>BEEZ CORE LABS</span>
                     </div>
 
                     <h2>BIENVENIDO</h2>
@@ -39,7 +39,7 @@ const Login = () => {
                                 <input
                                     id="ch-login-user"
                                     type="text"
-                                    placeholder="usuario@cod3hive.com"
+                                    placeholder="usuario@beezcore.com"
                                     autoComplete="username"
                                     required
                                 />
@@ -76,7 +76,7 @@ const Login = () => {
                     <p className="ch-login-notice">Módulo en construcción — próximamente disponible</p>
 
                     <div className="ch-login-footer">
-                        © {new Date().getFullYear()} Cod3Hive — Todos los derechos reservados
+                        © {new Date().getFullYear()} Beez Core — Todos los derechos reservados
                     </div>
                 </div>
             </div>

@@ -207,8 +207,8 @@ const Hero = () => {
             <div ref={mountRef} className="canvas-container"></div>
 
             <div className="hero-overlay">
-                <h1 className="gsap-title">COD3</h1>
-                <h2 className="gsap-title">HIVE</h2>
+                <h1 className="gsap-title">BEEZ</h1>
+                <h2 className="gsap-title">CORE</h2>
 
                 <div className="gsap-btn">
                     <button 

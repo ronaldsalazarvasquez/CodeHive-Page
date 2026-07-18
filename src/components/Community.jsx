@@ -16,20 +16,20 @@ const Community = () => {
                     textAlign: 'center',
                     border: '1px solid rgba(255,255,255,0.1)'
                 }}>
-                    <h2 className="heading-lg" style={{ marginBottom: '1.5rem' }}>Únete a la Comunidad Cod3Hive</h2>
+                    <h2 className="heading-lg" style={{ marginBottom: '1.5rem' }}>Únete a la Comunidad Beez Core</h2>
                     <p className="text-lead" style={{ maxWidth: '700px', margin: '0 auto 2.5rem' }}>
                         Si te gusta lo que hacemos, puedes ser parte del cambio. Únete a nuestra comunidad de desarrolladores o apóyanos para seguir creando herramientas gratuitas.
                     </p>
 
                     <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <a
-                            href={whatsappUrl("Hola CodeHive, me gustaría unirme a la comunidad de desarrolladores.")}
+                            href={whatsappUrl("Hola Beez Core, me gustaría unirme a la comunidad de desarrolladores.")}
                             target="_blank"
                             rel="noreferrer"
                             className="btn btn-primary"
                         >
                             <Users size={20} />
-                            Unirse a CodeHive Labs
+                            Unirse a Beez Core Labs
                         </a>
                         <a
                             href={whatsappUrl(generalData.messages.donation)}

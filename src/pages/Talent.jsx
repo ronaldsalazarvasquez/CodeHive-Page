@@ -3,8 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Rocket, Users, ShieldCheck } from 'lucide-react';
 
-// Importamos tu archivo JSON
-import teamData from '../data/team.json'; 
+import { useTeamData } from '../hooks/useTeamData';
 
 import '../assets/styles/Talent.css';
 
@@ -19,6 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 const TalentPage = () => {
     const mainPageContainerRef = useRef(null);
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+    const teamData = useTeamData();
 
     const companyValuesData = [
         { title: "Innovación Radical", desc: "No seguimos tendencias, creamos las bases del mañana digital.", icon: Rocket, accent: "#4475AD" },
@@ -106,8 +106,11 @@ const TalentPage = () => {
         return () => ctx.revert();
     }, []);
 
-    // Función auxiliar para resolver la imagen local o devolver el fallback
+    // Función auxiliar para resolver la imagen: URL remota (ej. foto de Notion),
+    // asset local, o el fallback por defecto.
     const resolveMemberImage = (imgName) => {
+        if (!imgName) return DEFAULT_IMAGE;
+        if (imgName.startsWith('http')) return imgName;
         const pathKey = `../assets/images/team/${imgName}`;
         if (imagesGlob[pathKey]) {
             return imagesGlob[pathKey].default || imagesGlob[pathKey];
@@ -509,7 +512,7 @@ const TalentPage = () => {
             {/* SECCIÓN 1: HERO */}
             <section className="ch-talent-hero-section">
                 <div className="ch-talent-hero-content">
-                    <h1 className="ch-talent-animate-hero">Conoce el ADN de <span>COD3HIVE</span></h1>
+                    <h1 className="ch-talent-animate-hero">Conoce el ADN de <span>BEEZ CORE</span></h1>
                     <p className="ch-talent-animate-hero">Mira cómo construimos el ecosistema 
                         tecnológico con impacto social.</p>
                     <div className="ch-talent-animate-hero">
@@ -527,7 +530,7 @@ const TalentPage = () => {
                             width="100%" 
                             height="100%" 
                             src="https://www.youtube.com/watch?v=_mQ_tNISckE&t"
-                            title="COD3HIVE Talent Corporate Video" 
+                            title="BEEZ CORE Talent Corporate Video"
                             frameBorder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowFullScreen
@@ -590,7 +593,7 @@ const TalentPage = () => {
             <section id="sobre-nosotros" className="ch-talent-philosophy-block">
                 <div className="ch-talent-phil-wrapper">
                     <div>
-                        <span className="ch-talent-values-eyebrow">// Filosofía Cod3Hive</span>
+                        <span className="ch-talent-values-eyebrow">// Filosofía Beez Core</span>
                         <h2 className="ch-talent-sec-title">Nuestros Valores</h2>
                         <div className="ch-talent-grid-values">
                             {companyValuesData.map((v, i) => {
@@ -634,7 +637,7 @@ const TalentPage = () => {
                             </div>
                             <div className="ch-talent-form-group">
                                 <label>Email de Contacto</label>
-                                <input type="email" placeholder="juan@cod3hive.com" required />
+                                <input type="email" placeholder="juan@beezcore.com" required />
                             </div>
                             <div className="ch-talent-form-group">
                                 <label>¿Cuál es tu especialidad?</label>

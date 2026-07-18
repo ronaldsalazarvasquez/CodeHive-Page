@@ -8,7 +8,7 @@ const MENSAJES = [
     "¡Bienvenido!",
     //"¿En qué te ayudo?",
     "¡Explora nuestros proyectos!",
-    "Somos Cod3Hive Labs 🐝",
+    "Somos Beez Core Labs 🐝",
 ];
 
 const Mascota = () => {

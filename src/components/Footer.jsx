@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
                     <div>
-                        <h3 className="heading-lg" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Cod3Hive</h3>
+                        <h3 className="heading-lg" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Beez Core</h3>
                         <p style={{ color: 'var(--color-text-muted)' }}>
                             Construyendo el mundo digital bit a bit.
                         </p>
@@ -28,7 +28,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href={`mailto:${generalData.contact.email}?subject=Consulta%20Servicios%20CodeHive`}
+                                    href={`mailto:${generalData.contact.email}?subject=Consulta%20Servicios%20BeezCore`}
                                     className="hover:text-white"
                                     style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}
                                 >
@@ -44,8 +44,8 @@ const Footer = () => {
                     <div>
                         <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', fontWeight: 600 }}>Enlaces</h4>
                         <ul style={{ color: 'var(--color-text-muted)', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                            <li><a href="/talento-hive#sobre-nosotros" className="hover:text-white">Sobre Nosotros</a></li>
-                            <li><a href="/talento-hive#nuestro-equipo" className="hover:text-white">Nuestro Equipo</a></li>
+                            <li><a href="/talento-beezcore#sobre-nosotros" className="hover:text-white">Sobre Nosotros</a></li>
+                            <li><a href="/talento-beezcore#nuestro-equipo" className="hover:text-white">Nuestro Equipo</a></li>
                             <li><a href="/proyectos" className="hover:text-white">Proyectos</a></li>
                             <li><a href="/intranet" className="hover:text-white">Intranet</a></li>
                         </ul>
@@ -91,7 +91,7 @@ const Footer = () => {
                     color: 'var(--color-text-muted)',
                     fontSize: '0.9rem'
                 }}>
-                    <p>&copy; {new Date().getFullYear()} Cod3Hive. Todos los derechos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} Beez Core. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>

@@ -1,13 +1,13 @@
-# 🐝 CodeHive - Landing Page
+# 🐝 Beez Core - Landing Page
 
-Bienvenido al repositorio oficial de la Landing Page de **CodeHive**. 
+Bienvenido al repositorio oficial de la Landing Page de **Beez Core**. 
 Somos un equipo de desarrolladores apasionados dedicados a crear soluciones web y móviles de alto rendimiento. Nuestra misión es resolver problemas reales de la sociedad y empresas privadas a través de experiencias digitales impactantes.
 
-![CodeHive Banner](public/Team.jpeg)
+![Beez Core Banner](public/Team.jpeg)
 
 ## 🚀 Sobre el Proyecto
 
-Este proyecto es la carta de presentación de CodeHive. Está diseñado para ser rápido, moderno y totalmente responsivo. Incluye información sobre nuestros servicios, nuestro equipo y destaca nuestros productos principales, como la aplicación **VotaPE**.
+Este proyecto es la carta de presentación de Beez Core. Está diseñado para ser rápido, moderno y totalmente responsivo. Incluye información sobre nuestros servicios, nuestro equipo y destaca nuestros productos principales, como la aplicación **VotaPE**.
 
 ### ✨ Características Principales
 
@@ -74,4 +74,4 @@ public/             # Archivos públicos (favicon, og-image)
 *   **Web**: [codehive-pages.dev](https://codehive-pages.dev)
 
 ---
-© 2026 CodeHive. Todos los derechos reservados.
+© 2026 Beez Core. Todos los derechos reservados.

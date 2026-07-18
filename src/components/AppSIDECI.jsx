@@ -10,7 +10,7 @@ const data = {
     originBadge: 'El Origen // Por Definir',
     originTitle: '¿Cómo nace SIDECI?',
     originText1: 'Texto de ejemplo: describe aquí el problema u oportunidad que dio origen a SIDECI.',
-    originText2: 'Texto de ejemplo: describe aquí la visión de Cod3Hive Labs al construir esta solución.',
+    originText2: 'Texto de ejemplo: describe aquí la visión de Beez Core Labs al construir esta solución.',
 
     heroBadge: 'Solución en Construcción',
     heroTitle: 'Descubre SIDECI',

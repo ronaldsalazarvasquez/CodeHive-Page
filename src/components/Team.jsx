@@ -1,6 +1,6 @@
 import React from 'react';
 import { Github, Twitter, Linkedin } from 'lucide-react';
-import teamData from '../data/team.json';
+import { useTeamData } from '../hooks/useTeamData';
 
 // Dynamically import all team images from assets
 const imagesGlob = import.meta.glob('../assets/images/team/*.{png,jpg,jpeg,svg,webp}', { eager: true });
@@ -17,6 +17,8 @@ const getTeamImage = (imageName) => {
 };
 
 const Team = () => {
+    const teamData = useTeamData();
+
     return (
         <section id="team" className="section">
             <div className="container">

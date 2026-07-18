@@ -8,7 +8,7 @@ import ToolTrack from './pages/projects/ToolTrack';
 import SIDECI from './pages/projects/SIDECI';
 import Projects from './pages/Projects';
 import Footer from './components/Footer';
-import Hive from './pages/Hive';
+import Talent from './pages/Talent';
 import Login from './pages/Login';
 import AreaSection from './components/Pillars';
 import PilarDetailPage from './components/PilarDetailPage';
@@ -26,7 +26,7 @@ function AppLayout() {
       {!isFullscreen && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/talento-hive" element={<Hive />} />
+        <Route path="/talento-beezcore" element={<Talent />} />
         <Route path="/proyectos" element={<Projects />} />
         <Route path="/proyectos/votape" element={<VotaPE />} />
         <Route path="/proyectos/cix360" element={<Cix360 />} />

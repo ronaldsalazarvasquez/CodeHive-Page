@@ -1,0 +1,42 @@
+{
+    "RONALD": {
+        "id": "ronald",
+        "name": "Ronald Salazar",
+        "social": { "twitter": "#", "portfolio": "#" }
+    },
+    "LENIN R.": {
+        "id": "lennin",
+        "name": "Lenin Ramirez",
+        "social": { "twitter": "#", "portfolio": "#" }
+    },
+    "DEYVI": {
+        "id": "deyvi",
+        "name": "Deyvi Zelada",
+        "social": { "twitter": "#", "portfolio": "#" }
+    },
+    "YAJAYRA": {
+        "id": "yajaira",
+        "name": "Yajayra Huaman",
+        "social": { "twitter": "#", "portfolio": "#" }
+    },
+    "PARRA": {
+        "id": "jose",
+        "name": "José Angeles",
+        "social": { "twitter": "#", "portfolio": "#" }
+    },
+    "DENIS": {
+        "id": "dennis",
+        "name": "Denis Huamán",
+        "social": { "twitter": "#", "portfolio": "#" }
+    },
+    "LENIN A.": {
+        "id": "lenin",
+        "name": "Lenin Castañeda",
+        "social": { "twitter": "#", "portfolio": "#" }
+    },
+    "HEYDI": {
+        "id": "heydi",
+        "name": "Heidy Tenorio",
+        "social": { "twitter": "#", "portfolio": "#" }
+    }
+}

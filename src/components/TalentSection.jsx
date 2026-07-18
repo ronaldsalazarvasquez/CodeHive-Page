@@ -223,7 +223,7 @@ const TalentSection = () => {
                             Detrás de cada solución hay personas que decidieron ir más allá de lo esperado.
                         </p>
                         <button className="talent-btn" 
-                            onClick={() => navigate('/talento-hive')}
+                            onClick={() => navigate('/talento-beezcore')}
                         >Conocer</button>
                     </div>
 
@@ -231,7 +231,7 @@ const TalentSection = () => {
                         <div className="image-decoration"></div>
                         <img
                             src={TalentImg}
-                            alt="Talento COD3HIVE"
+                            alt="Talento Beez Core"
                             className="representative-img"
                             loading="lazy"
                         />

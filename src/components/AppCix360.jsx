@@ -122,7 +122,7 @@ const AppShowcase = () => {
                                 Las organizaciones modernas enfrentaban un desafío crítico: la falta de sincronización asíncrona y la ineficiencia al gestionar operaciones y flujos de trabajo distribuidos en tiempo real.
                             </p>
                             <p>
-                                Cix360 se estructuró en Cod3Hive Labs con la visión de unificar la captura de datos en el campo a través de dispositivos móviles, integrándola de forma transparente con un potente motor administrativo web centralizado para mitigar riesgos e impulsar la rentabilidad corporativa.
+                                Cix360 se estructuró en Beez Core Labs con la visión de unificar la captura de datos en el campo a través de dispositivos móviles, integrándola de forma transparente con un potente motor administrativo web centralizado para mitigar riesgos e impulsar la rentabilidad corporativa.
                             </p>
                         </div>
 

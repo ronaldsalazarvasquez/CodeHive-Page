@@ -10,7 +10,7 @@ const data = {
     originBadge: 'El Origen // Gestión de Activos Industriales',
     originTitle: '¿Cómo nace ToolTrack?',
     originText1: 'Los talleres de mantenimiento perdían tiempo y dinero por la falta de trazabilidad de herramientas y repuestos, generando compras duplicadas y paradas innecesarias.',
-    originText2: 'ToolTrack se está construyendo en Cod3Hive Labs para llevar un control de inventario Just-in-Time, con trazabilidad completa de cada activo del taller.',
+    originText2: 'ToolTrack se está construyendo en Beez Core Labs para llevar un control de inventario Just-in-Time, con trazabilidad completa de cada activo del taller.',
 
     heroBadge: 'Plataforma en Construcción',
     heroTitle: 'Descubre ToolTrack',

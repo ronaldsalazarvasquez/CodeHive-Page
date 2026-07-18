@@ -91,7 +91,7 @@ const AppShowcase = () => {
                                 En un entorno donde la saturación de información confunde al electorado, identificamos una necesidad crítica: la falta de centralización y verificación de datos políticos fiables. 
                             </p>
                             <p>
-                                VotaPE nació en los laboratorios de Cod3Hive con la visión de empoderar al ciudadano mediante tecnología limpia, auditada y de libre acceso, erradicando las barreras de la desinformación en los procesos democráticos.
+                                VotaPE nació en los laboratorios de Beez Core con la visión de empoderar al ciudadano mediante tecnología limpia, auditada y de libre acceso, erradicando las barreras de la desinformación en los procesos democráticos.
                             </p>
                         </div>
 

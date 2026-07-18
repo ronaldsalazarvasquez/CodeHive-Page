@@ -45,7 +45,7 @@ const PilarDetailPage = () => {
         },
         reingenieria: {
             headerTitle: "Modernización Digital",
-            tagline: "COD3HIVE // BUSINESS DEVELOPMENT",
+            tagline: "BEEZ CORE // BUSINESS DEVELOPMENT",
             videoUrl: "/videos/presentacion-plataformas.mp4", 
             isVideoLocal: true,
             apps: [
@@ -181,7 +181,7 @@ const PilarDetailPage = () => {
                             />
                             <iframe 
                                 src={currentData.videoUrl} 
-                                title={`Cod3Hive - Overview ${currentData.headerTitle}`}
+                                title={`Beez Core - Overview ${currentData.headerTitle}`}
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowFullScreen
                             ></iframe>

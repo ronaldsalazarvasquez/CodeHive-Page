@@ -15,19 +15,19 @@ const CardsSection = () => {
             id: 1,
             image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             title: 'Ingeniería de Plataformas Escalables',
-            path: '/proyects/plataformas' // 👇 Apunta al identificador del diccionario
+            path: '/proyectos/plataformas' // 👇 Apunta al identificador del diccionario
         },
         {
             id: 2,
             image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             title: 'Tecnología Resiliente de Alto Impacto',
-            path: '/proyects/tecnologia' // 👇 Apunta al identificador del diccionario
+            path: '/proyectos/tecnologia' // 👇 Apunta al identificador del diccionario
         },
         {
             id: 3,
             image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
             title: 'Reingeniería & Modernización Digital',
-            path: '/proyects/reingenieria' // 👇 Apunta al identificador del diccionario
+            path: '/proyectos/reingenieria' // 👇 Apunta al identificador del diccionario
         }
     ];
 

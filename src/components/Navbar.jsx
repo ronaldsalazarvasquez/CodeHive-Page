@@ -20,9 +20,9 @@ const Navbar = () => {
     // 🌟 Actualizado el nombre a 'El Enjambre' y la ruta correspondiente
     const navLinks = [
         { name: 'Inicio', path: '/' },
-        { name: 'Talento-HIVE', path: '/talento-hive' },
+        { name: 'Talento', path: '/talento' },
         { name: 'Proyectos', path: '/proyectos' },
-        { name: 'Blog Cod3Hive', path: '/#', isSpecial: true }, // 🌟 Bandera para identificar el botón premium
+        //{ name: 'Blog BeezCorp', path: '/#', isSpecial: true }, // 🌟 Bandera para identificar el botón premium
     ];
 
     // Check if link is active
@@ -54,8 +54,8 @@ const Navbar = () => {
                     gap: '0.5rem',
                     textDecoration: 'none'
                 }}>
-                    <img src={logo} alt="Cod3Hive" style={{ width: '28px', height: '32px' }} />
-                    Cod3Hive
+                    <img src={logo} alt="BeezCorp" style={{ width: '28px', height: '32px' }} />
+                    BeezCorp
                 </Link>
 
                 {/* Desktop Menu */}

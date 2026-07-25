@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
                     <div>
-                        <h3 className="heading-lg" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Cod3Hive</h3>
+                        <h3 className="heading-lg" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>BeezCorp</h3>
                         <p style={{ color: 'var(--color-text-muted)' }}>
                             Construyendo el mundo digital bit a bit.
                         </p>
@@ -91,7 +91,7 @@ const Footer = () => {
                     color: 'var(--color-text-muted)',
                     fontSize: '0.9rem'
                 }}>
-                    <p>&copy; {new Date().getFullYear()} Cod3Hive. Todos los derechos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} BeezCorp. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>

@@ -7,6 +7,7 @@ import Cix360 from './pages/projects/Cix360';
 import ToolTrack from './pages/projects/ToolTrack';
 import SIDECI from './pages/projects/SIDECI';
 import Projects from './pages/Projects';
+import Cod3HiveUnit from './components/Cod3HiveUnit';
 import Footer from './components/Footer';
 import Hive from './pages/Hive';
 import Login from './pages/Login';
@@ -26,14 +27,15 @@ function AppLayout() {
       {!isFullscreen && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/talento-hive" element={<Hive />} />
+        <Route path="/talento" element={<Hive />} />
         <Route path="/proyectos" element={<Projects />} />
         <Route path="/proyectos/votape" element={<VotaPE />} />
         <Route path="/proyectos/cix360" element={<Cix360 />} />
         <Route path="/proyectos/tooltrack" element={<ToolTrack />} />
         <Route path="/proyectos/sideci" element={<SIDECI />} />
         <Route path="/area-section" element={<AreaSection />} />
-        <Route path="/proyects/:idPilar" element={<PilarDetailPage />} />
+        <Route path="/cod3hive-section" element={<Cod3HiveUnit />} />
+        <Route path="/proyectos/:idPilar" element={<PilarDetailPage />} />
         <Route path="/intranet" element={<Login />} />
       </Routes>
       {!isFullscreen && <Footer />}

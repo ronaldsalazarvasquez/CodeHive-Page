@@ -45,7 +45,7 @@ const Projects = () => {
                     {/* ENCABEZADO TIPO HUD CON MARCA DE ACENTO */}
                     <div className="ch-projects-title-block">
                         <h1>Nuestros Proyectos</h1>
-                        <p>Explora el ecosistema completo de aplicaciones e ingeniería digital de Cod3Hive Labs.</p>
+                        <p>Explora el ecosistema completo de aplicaciones e ingeniería digital de BeezCorp.</p>
                     </div>
 
                     {/* CUADRÍCULA DE PORTAFOLIO GLOBAL */}

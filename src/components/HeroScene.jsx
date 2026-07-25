@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 // Importas tu imagen PNG
-import BeePNG from '../assets/images/logo/icono.webp';
+import BeePNG from '../assets/images/logo/icono.webp'; //cambio de icono principal
 
 const Hero = () => {
     const containerRef = useRef(null); 
@@ -207,8 +207,8 @@ const Hero = () => {
             <div ref={mountRef} className="canvas-container"></div>
 
             <div className="hero-overlay">
-                <h1 className="gsap-title">COD3</h1>
-                <h2 className="gsap-title">HIVE</h2>
+                <h1 className="gsap-title">BEEZ</h1>
+                <h2 className="gsap-title">CORP</h2>
 
                 <div className="gsap-btn">
                     <button 

@@ -223,7 +223,7 @@ const TalentSection = () => {
                             Detrás de cada solución hay personas que decidieron ir más allá de lo esperado.
                         </p>
                         <button className="talent-btn" 
-                            onClick={() => navigate('/talento-hive')}
+                            onClick={() => navigate('/talento')}
                         >Conocer</button>
                     </div>
 

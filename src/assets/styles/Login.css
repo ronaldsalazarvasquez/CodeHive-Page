@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 .ch-login-screen {
     display: flex;
     width: 100vw;
@@ -5,97 +7,151 @@
     font-family: 'Outfit', sans-serif;
 }
 
-/* ===== LEFT PANEL — BRANDING ===== */
+/* ===== LEFT PANEL — BRANDING / SIGNATURE HEXAGON FIELD ===== */
 .ch-login-left {
     position: relative;
-    flex: 0 0 42%;
-    background: rgba(13, 17, 23, 0.75);
+    flex: 0 0 44%;
+    background: #0d1117;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.75rem;
+    gap: 2.5rem;
     overflow: hidden;
 }
 
+/* Panal hexagonal repetido, muy sutil */
 .ch-login-left::before {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.25), transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(13, 17, 23, 0.18), transparent 50%);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='74' viewBox='0 0 64 74'%3E%3Cpath d='M32 0L64 18.5V55.5L32 74L0 55.5V18.5Z' fill='none' stroke='rgba(92,203,255,0.07)' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 64px 74px;
+    background-position: center;
     pointer-events: none;
 }
 
-.ch-login-watermark {
+/* Viñeta radial para dar profundidad detrás del panal */
+.ch-login-left::after {
+    content: '';
     position: absolute;
-    width: 60%;
-    max-width: 420px;
-    right: -8%;
-    bottom: -10%;
-    opacity: 0.1;
-    transform: rotate(-8deg);
+    inset: 0;
+    background: radial-gradient(circle at 50% 42%, rgba(25, 169, 255, 0.12), transparent 60%);
     pointer-events: none;
-    filter: brightness(0) invert(1);
 }
 
-.ch-login-brand-card {
+/* Nodos de "enjambre" que laten con brillo, sugiriendo red/colectivo */
+.ch-login-node {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5CCBFF;
+    box-shadow: 0 0 12px 3px rgba(92, 203, 255, 0.7);
+    animation: ch-node-pulse 3.6s ease-in-out infinite;
+}
+
+.ch-login-node--amber {
+    background: #ffaa00;
+    box-shadow: 0 0 12px 3px rgba(255, 170, 0, 0.6);
+}
+
+.ch-login-node:nth-child(1) { top: 22%; left: 28%; animation-delay: 0s; }
+.ch-login-node:nth-child(2) { top: 68%; left: 20%; animation-delay: 0.9s; }
+.ch-login-node:nth-child(3) { top: 30%; left: 76%; animation-delay: 1.6s; }
+.ch-login-node:nth-child(4) { top: 74%; left: 70%; animation-delay: 2.3s; }
+
+@keyframes ch-node-pulse {
+    0%, 100% { opacity: 0.25; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.6); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ch-login-node {
+        animation: none;
+        opacity: 0.6;
+    }
+}
+
+/* Marco hexagonal para el logo — placeholder mientras se define el logo final */
+.ch-login-logo-frame {
     position: relative;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.75rem;
-    padding: 3rem 3.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 1.75rem;
-    backdrop-filter: blur(14px);
-    box-shadow: 0 25px 60px rgba(13, 17, 23, 0.25);
-}
-
-.ch-login-logo-badge {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
+    width: 148px;
+    height: 128px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 15px 35px rgba(13, 17, 23, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
-.ch-login-logo-mark {
-    width: 88px;
-    height: 88px;
+.ch-login-logo-frame svg.ch-login-hex-outline {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ch-login-logo-frame img.ch-login-logo-mark {
+    width: 62px;
+    height: 62px;
     object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.ch-login-logo-placeholder-icon {
+    color: rgba(92, 203, 255, 0.55);
+    position: relative;
+    z-index: 1;
+}
+
+.ch-login-logo-placeholder-tag {
+    position: relative;
+    z-index: 1;
+    margin-top: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
 }
 
 .ch-login-brand-text {
+    position: relative;
+    z-index: 1;
     text-align: center;
 }
 
+.ch-login-brand-text .ch-login-prompt {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #5CCBFF;
+    margin-bottom: 0.6rem;
+}
+
+.ch-login-brand-text .ch-login-prompt::before {
+    content: '// ';
+    color: rgba(255, 170, 0, 0.85);
+}
+
 .ch-login-brand-text h1 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     font-weight: 800;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     color: #ffffff;
     margin: 0;
-    text-shadow: 0 2px 20px rgba(13, 17, 23, 0.2);
 }
 
 .ch-login-brand-text span {
     display: block;
     margin-top: 0.5rem;
-    font-size: 1.55rem;
-    font-weight: 700;
-    letter-spacing: 8px;
-    background: linear-gradient(to bottom, #5CCBFF 0%, #19A9FF 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #19A9FF; /* Fallback for older browsers */
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 9px;
+    font-family: 'JetBrains Mono', monospace;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 /* ===== RIGHT PANEL — FORM ===== */
@@ -136,7 +192,7 @@
 }
 
 .ch-login-form-wrapper h2 {
-    font-size: 1.9rem;
+    font-size: 1.95rem;
     font-weight: 800;
     letter-spacing: 1px;
     margin: 0 0 0.5rem 0;
@@ -156,11 +212,17 @@
 }
 
 .ch-login-field label {
-    font-size: 0.72rem;
-    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
     letter-spacing: 1px;
     color: #374151;
-    text-transform: uppercase;
+    text-transform: none;
+}
+
+.ch-login-field label::before {
+    content: '$ ';
+    color: #19A9FF;
 }
 
 .ch-login-input-box {
@@ -186,13 +248,18 @@
     color: #0d1117;
     background: #f9fafb;
     outline: none;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .ch-login-input-box input:focus {
     border-color: #19A9FF;
     background: #ffffff;
     box-shadow: 0 0 0 4px rgba(92, 203, 255, 0.18);
+}
+
+.ch-login-input-box input:focus-visible {
+    outline: 2px solid #19A9FF;
+    outline-offset: 2px;
 }
 
 .ch-login-toggle-visibility {
@@ -210,9 +277,15 @@
     color: #374151;
 }
 
+.ch-login-toggle-visibility:focus-visible {
+    outline: 2px solid #19A9FF;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
 .ch-login-submit-btn {
     width: 100%;
-    background-color: #000000;
+    background-color: #0d1117;
     color: #ffffff;
     border: none;
     padding: 0.95rem;
@@ -223,12 +296,18 @@
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 0.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .ch-login-submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    background-color: #000000;
+    box-shadow: 0 10px 28px rgba(25, 169, 255, 0.35);
+}
+
+.ch-login-submit-btn:focus-visible {
+    outline: 2px solid #19A9FF;
+    outline-offset: 3px;
 }
 
 .ch-login-notice {

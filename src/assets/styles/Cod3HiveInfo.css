@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700;800;900&display=swap');
+
+/* =========================================================
+           🎨 PALETA Y VARIABLES MONOCROMÁTICAS
+           ========================================================= */
+:root {
+    --ch-bg: #050507; /* Fondo principal de la página */
+    --ch-card-bg: #0a0b0e; /* Fondo de las tarjetas/reels */
+    --ch-accent: #ffffff; /* COLOR DE ACENTO (Puntos, bordes activos, hover) */
+    --ch-border: rgba(255, 255, 255, 0.1); /* Líneas y bordes principales */
+    --ch-border-light: rgba(255, 255, 255, 0.05); /* Líneas tenues de la tabla */
+    --ch-text-primary: #ffffff; /* Texto principal / Títulos */
+    --ch-text-secondary: #a1a1aa; /* Subtítulos / Párrafos */
+    --ch-text-muted: #52525b; /* Fechas y números / 01, / 02 */
+}
+
+.ch-wrapper {
+    min-height: 100vh;
+    background-color: var(--ch-bg);
+    color: var(--ch-text-primary);
+    font-family: 'Inter', sans-serif;
+    padding: 100px 24px 140px;
+    /* Fondo de grilla técnica como en la Imagen 1 */
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.ch-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+           1. HERO SECTION (IMAGEN 1)
+           --------------------------------------------------------- */
+.ch-hero {
+    margin-bottom: 110px;
+}
+
+.ch-hero-badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.ch-hero-badge {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--ch-text-secondary);
+    border: 1px solid var(--ch-border);
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Título COD3HIVE mixto (Sólido + Stroke) */
+.ch-hero-title-wrap {
+    margin-bottom: 50px;
+}
+
+.ch-hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3.8rem, 10vw, 7.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ch-title-solid {
+    color: #ffffff;
+}
+
+.ch-title-stroke {
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+/* Bloque Párrafo + Tabla de Datos */
+.ch-hero-body {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.ch-hero-text-side {
+    border-left: 2px solid var(--ch-border);
+    padding-left: 30px;
+}
+
+.ch-hero-paragraph {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--ch-text-primary);
+    font-weight: 400;
+    margin: 0;
+}
+
+.ch-hero-paragraph u,
+.ch-hero-paragraph strong {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Tabla lateral derecha */
+.ch-hero-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ch-hero-stats-table tr {
+    border-bottom: 1px solid var(--ch-border-light);
+}
+
+.ch-hero-stats-table td {
+    padding: 12px 0;
+    font-size: 0.82rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.ch-stat-label {
+    color: var(--ch-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ch-stat-value {
+    color: #ffffff;
+    text-align: right;
+    font-weight: 700;
+}
+
+/* TITULOS DE SECCIÓN GENERI-COS */
+.ch-sec-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 45px;
+}
+
+.ch-sec-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ch-text-muted);
+}
+
+.ch-sec-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+/* ---------------------------------------------------------
+           2. GALERÍA DE TRAYECTORIA
+           --------------------------------------------------------- */
+.ch-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 120px;
+}
+
+.ch-photo-card {
+    background: var(--ch-card-bg);
+    border: 1px solid var(--ch-border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.ch-photo-card:hover {
+    border-color: var(--ch-accent);
+    transform: translateY(-4px);
+}
+
+.ch-photo-img-wrap {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.ch-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.ch-photo-card:hover .ch-photo-img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.ch-photo-info {
+    padding: 22px;
+    border-top: 1px solid var(--ch-border-light);
+}
+
+.ch-photo-meta {
+    font-size: 0.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--ch-text-muted);
+    margin-bottom: 6px;
+}
+
+.ch-photo-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.ch-photo-sub {
+    font-size: 0.85rem;
+    color: var(--ch-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* ---------------------------------------------------------
+           3. VOZ DE LA ESCUADRA (FORMATO REELS / SOCIAL CARDS)
+           --------------------------------------------------------- */
+.ch-reels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 120px;
+}
+
+.ch-reel-card {
+    background: var(--ch-card-bg);
+    border: 1px solid var(--ch-border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease;
+}
+
+.ch-reel-card:hover {
+    border-color: var(--ch-accent);
+}
+
+.ch-reel-media {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    /* Formato vertical estilo Reel */
+    overflow: hidden;
+}
+
+.ch-reel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%) contrast(110%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.ch-reel-card:hover .ch-reel-img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+.ch-reel-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--ch-border);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.ch-reel-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.ch-reel-caption {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--ch-text-secondary);
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.ch-reel-author-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid var(--ch-border-light);
+    padding-top: 12px;
+}
+
+.ch-reel-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #18181b;
+    border: 1px solid var(--ch-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.ch-reel-author-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ch-reel-author-role {
+    font-size: 0.72rem;
+    color: var(--ch-text-muted);
+    margin: 0;
+}
+
+/* ---------------------------------------------------------
+           4. RADAR / PRÓXIMOS DESAFÍOS (IMAGEN 2)
+           --------------------------------------------------------- */
+.ch-radar-section {
+    margin-bottom: 40px;
+}
+
+.ch-radar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.ch-radar-tagline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+    color: var(--ch-text-muted);
+    text-transform: uppercase;
+}
+
+/* Timeline vertical */
+.ch-timeline {
+    position: relative;
+    padding-left: 28px;
+    border-left: 1px solid var(--ch-border);
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.ch-timeline-node {
+    position: relative;
+}
+
+/* Punto/Círculo en la línea */
+.ch-timeline-node::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #050507;
+    border: 2px solid #ffffff;
+}
+
+.ch-timeline-date {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--ch-text-secondary);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.ch-timeline-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.5px;
+}
+
+.ch-timeline-sub {
+    font-size: 0.95rem;
+    color: var(--ch-text-secondary);
+    margin: 0;
+    font-weight: 300;
+}
+
+@media (max-width: 850px) {
+    .ch-hero-body {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .ch-hero-text-side {
+        border-left: none;
+        padding-left: 0;
+    }
+}
